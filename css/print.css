@@ -1,0 +1,229 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22 Feb, 2016, 5:32:14 PM
+    Author     : farhan
+*/
+
+@media print {
+
+    body.print_body_class {
+
+        font-size: 10pt ;
+        font-family:'Times New Roman',Times,serif ;
+        line-height: 150% ;
+
+    }
+
+    header.print_header_class {
+
+        line-height: 100%;
+        display: none ;
+
+    }
+    
+    .page_header_print_class {
+        
+        font-size: 12pt ;
+        
+    }
+
+    .alignleft_class {
+
+        float: left ;
+
+    }
+
+    .alignright_class {
+
+        float: right ;
+
+    }
+
+    .aligncentre_class {
+
+        display: inline-block ;
+        float: right ;
+        width: 60% ;
+
+    }
+
+    .alignheader_class {
+
+        display:inline-block;
+        float: right ;
+        width: 40% ;
+
+    }
+
+    .clear_class {
+
+        clear: both ;
+
+    }
+
+    div.table_class {
+
+        display: table ;
+
+    }
+
+    div.table_row_class {
+
+        display: table-row ;
+
+    }
+
+    div.table_cell_class {
+
+        display: table-cell ;
+        padding: 5px ;
+        border-left: #000000 0.5px solid ;
+        border-right: #000000 0.5px solid ;
+        border-bottom: #000000 0.5px solid ;
+
+    }
+
+    div.table_parts_cell_class {
+
+        display: table-cell ;
+        padding: 2px ;
+        border-left:#000000 0.5px solid ;
+        border-right:#000000 0.5px solid ;
+        border-bottom:#000000 0.5px solid ;
+        width: 200px ;
+
+    }
+    
+    
+    div.table_parts_serial_cell_class {
+
+        display: table-cell ;
+        padding: 2px ;
+        border-left:#000000 0.5px solid ;
+        border-right:#000000 0.5px solid ;
+        border-bottom:#000000 0.5px solid ;
+        width: 25px ;
+
+    }
+    
+    div.table_parts_serial_cell_without_borders_class {
+
+        display: table-cell ;
+        padding: 2px ;
+        width: 25px ;
+
+    }    
+    
+    div.table_parts_amount_cell_class {
+
+        display: table-cell ;
+        padding: 2px ;
+        border-left:#000000 0.5px solid ;
+        border-right:#000000 0.5px solid ;
+        border-bottom:#000000 0.5px solid ;
+        width: 100px ;
+
+    }
+    
+    div.table_parts_amount_cell_without_border_class {
+
+        display: table-cell ;
+        padding: 2px ;
+        width: 100px ;
+
+    }
+
+    div.table_parts_cell_without_borders_class {
+
+        display: table-cell ;
+        padding: 2px ;
+        width: 150px ;
+
+    }
+
+    div.table_cell_without_borders_class {
+
+        display: table-cell ;
+        padding: 2px ;
+
+    }
+    
+    #survey_table_print_id {
+        
+        margin-left: 40% ;
+        
+    }
+    
+    #vehicle_table_print_id {
+        
+        margin-left: 20%
+        
+    }
+
+    section {
+
+        page-break-inside: avoid ;        
+        border: 0.5px solid #000000 ;
+
+    }
+
+    div.page_break {
+
+        page-break-after: always ;
+
+    }
+
+    /*    hr.horizontal_line_class {
+    
+            border: 1px solid;
+            height: 5px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            color: #000000;
+    
+        }*/
+
+    label.label_class {
+
+        display: inline-block ;
+        max-width: 100% ;
+        margin-bottom: 0% ;
+        font-weight: 100 ;
+
+    }
+
+    #bill_header {
+
+        font-size: 12pt ;
+
+    }
+
+    #page_header {
+
+        font-size: 12pt ;
+
+    }
+
+    /*    .imt23_class {
+    
+            display: none;
+    
+        }*/
+
+    /*    @page:right  {
+    
+            size: A4;
+    
+            @bottom-right {
+                counter-increment: page;
+                counter-reset: page 1;
+                content: 'Page ' counter(page) ' of ' counter(pages);
+            }
+    
+        }   */
+
+}

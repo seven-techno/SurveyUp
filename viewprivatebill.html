@@ -1,0 +1,447 @@
+<!doctype html>
+<html>
+<head>
+    
+    <title>Bill</title>
+     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/printpreviewbill.css">
+  <link rel="stylesheet" type="text/css" media="print" href="css/printbill.css">
+        
+          </head>
+
+
+ <body>
+
+
+<input type="button" onclick="location.href ='displayspotTable.html';" value="BACK" style="background-color:#1a4a75;
+    border: none;
+    color: white;
+    width: 5%;
+    height: 33px;
+    border-radius: 17px;">  
+
+<input type="button"  onclick="printDiv('printableArea')" value="PRINT" style="background-color: #1a4a75;
+    border: none;
+    color: white;
+    width: 5%;
+    height: 33px;
+    float: right;
+    border-radius: 17px;" />
+      
+
+
+<article>
+<div id="printableArea">
+<form >
+ 
+<div class="row footer" id="content1">
+
+    <div class="invoice-box">
+        <table cellpadding="0" cellspacing="0">
+
+<tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                        
+                         
+                    
+                            <td>
+                        <label class="label_class">License No</label>:  <span id="license_no_bill_print_id" name="license_no_bill_print_id"></span><br>
+                        <label class="label_class">Valid Upto</label>:  <span id="valid_upto_bill_print_id" name="valid_upto_bill_print_id"></span><br>
+                        <label class="label_class">PA No</label>:  <span id="pan_no_bill_print_id" name="pan_no_bill_print_id"></span><br>
+                
+                            </td>
+                            <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span id="name_of_prson_company_bill_print_id" name="name_of_prson_company_bill_print_id"></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="qualification_of_person_insurance_company_bill_print_id" name="qualification_of_person_insurance_company_bill_print_id"></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="address_of_person_insurance_company_bill_print_id" name="address_of_person_insurance_company_bill_print_id"></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<label class="label_class">TelNo</label>:  <span id="tel_of_insurance_company_bill_print_id" name="tel_of_insurance_company_bill_print_id"></span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<label class="label_class">mobileNo</label>:  <span id="mobile_of_insurance_company_bill_print_id" name="mobile_of_insurance_company_bill_print_id"></span><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<label class="label_class">Email</label>:  <span id="email_of_insurance_company_bill_print_id" name="email_of_insurance_company_bill_print_id"></span>
+                            </td>
+                        </tr>
+                    </table>
+</div>
+
+
+            <tr class="top">
+                <td colspan="2">
+                    <table>
+                   
+                    <section id="bill_to_print_id" name="bill_to_print_id">
+                     <td>
+                    <h1 class="header"  style="position:relative;left:25%;font-size:20px;">BILL CUM ADVANCED RECEIPT</h1>
+                    </td>
+                        <tr>
+                            
+                            <td>
+
+                             <span class="alignleft_class"><label class="label_class">Report No:  <span id="report_number_bill_print_id" name="report_number_bill_print_id"></span></label></span>
+                             <span class="alignright_class"><label class="label_class">Date:  <span id="report_date_bill_print_id" name="report_date_bill_print_id"></span></label></span>
+                            
+                </td>
+                            
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            <tr class="information">
+                <td colspan="2">
+                    <table>
+                        <tr>
+                            <td style="border-bottom:1px solid black;">
+                    To,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="manager_of_insurance_company_bill_print_id" name="manager_of_insurance_company_bill_print_id"></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="name_of_insurance_company_bill_print_id" name="name_of_insurance_company_bill_print_id"></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="address_of_insurance_company_bill_print_id" name="address_of_insurance_company_bill_print_id"></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<label class="label_class">Company Code</label>:  <span id="branch_code_of_insurance_company_bill_print_id" name="branch_code_of_insurance_company_bill_print_id"></span>
+                </section>
+                            </td>  
+               
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            
+            <tr class="details">
+                <td>
+                  To professional charges for Survey of: Make
+                </td>
+                
+                <td>
+                  <span id="vehicle_make_bill_print_id" name="vehicle_make_bill_print_id"></span>
+                </td>
+            </tr>
+
+             <tr class="details">
+                <td>
+                    To professional charges for Survey of: Model
+                </td>
+                
+                <td>
+                 <span id="vehicle_model_bill_print_id" name="vehicle_model_bill_print_id"></span>
+                </td>
+            </tr>
+        
+             <tr class="details">
+                <td>
+                    Bearing Regn No.
+                </td>
+                
+                <td>
+                    <span id="vehicle_registration_number_bill_print_id" name="vehicle_registration_number_bill_print_id"></span>
+                </td>
+            </tr>
+
+            <tr class="details">
+                <td>
+                    Insured
+                </td>
+                
+                <td>
+                     <span id="name_of_insured_bill_print_id" name="name_of_insured_bill_print_id"></span><br><br>
+                     <span id="address_of_insured_bill_print_id" name="address_of_insured_bill_print_id"></span>
+                </td>
+            </tr>
+
+
+
+                <tr class="details">
+                <td>
+                    Policy No
+                </td>
+                
+                <td>
+                      <span id="policy_number_bill_print_id" name="policy_number_bill_print_id"></span>-<span id="policy_code_bill_print_id" name="policy_code_bill_print_id"></span>    
+                </td>
+            </tr>
+
+             <tr class="details">
+                <td>
+                   Claim No
+                </td>
+                
+                <td>
+                      <span id="claim_number_code_bill_private_id" name="claim_number_code_bill_private_id"></span>-<span id="claim_number_bill_print_id" name="claim_number_bill_print_id"></span>
+                <div class="clear_class">
+                </td>
+            </tr>
+
+            <tr class="details">
+                <td>
+                    Local Survey Place
+                </td>
+                
+                <td>
+                    <span id="local_location_bill_print_id" name="local_location_bill_print_id"></span>
+                </td>
+            </tr>
+            <tr class="details">
+                <td>
+                    Outstation Survey Place
+                </td>
+                
+                <td>
+                    <span id="outstation_location_bill_print_id" name="outstation_location_bill_print_id"></span>
+                </td>
+            </tr>
+            <tr class="heading">
+                <td>
+                    Particulars
+                </td>
+                
+                <td>
+                    Amount
+                </td>
+            </tr>
+            
+            <tr class="item">
+                <td>
+                    Spot Survey/ Preliminary
+                </td>
+                
+                <td>
+                    <span id="spot_survey_bill_print_id" name="spot_survey_bill_print_id"></span>
+                </td>
+            </tr>
+            
+            <tr class="item">
+                <td>
+                    Final Survey
+                </td>
+                
+                <td>
+               <span id="final_survey_bill_print_id" name="final_survey_bill_print_id"></span>
+                </td>
+            </tr>
+
+            <tr class="item">
+                <td>
+                    Reinspection
+                </td>
+                
+                <td>
+              <span id="reinspection_bill_print_id" name="reinspection_bill_print_id"></span>
+                </td>
+            </tr>
+
+            <tr class="item">
+                <td>
+                    Opinion
+                </td>
+                
+                <td>
+              <span id="opinion_bill_print_id" name="opinion_bill_print_id"></span>
+                </td>
+            </tr>
+
+            <tr class="item">
+                <td>
+                    Bill Check
+                </td>
+                
+                <td>
+                <span id="check_bill_print_id" name="check_bill_print_id"></span>
+                </td>
+            </tr>
+
+             <tr class="item">
+                <td>
+                    Local
+                </td>
+                
+                <td>
+                <span id="local_expense_bill_print_id" name="local_expense_bill_print_id"></span>
+                </td>
+            </tr>
+            
+           
+
+            <tr class="item">
+                <td>
+                   Total distance travelled
+                </td>
+                
+                <td>
+            <span id="local_distance_bill_print_id" name="local_distance_bill_print_id"></span>
+                </td>
+            </tr>
+            <tr class="item">
+                <td>
+                    Outstation 
+                </td>
+                
+                <td>
+               <span id="outstation_expense_bill_print_id" name="outstation_expense_bill_print_id"></span>
+                </td>
+            </tr>
+
+            
+
+            <tr class="item">
+                <td>
+                    Total distance travelled
+                </td>
+                
+                <td>
+               <span id="outstation_distance_bill_print_id" name="outstation_distance_bill_print_id"></span>
+                </td>
+            </tr>
+
+            <tr class="item">
+                <td>
+                    Photos <span id="number_of_photos_bill_print_id" name="number_of_photos_bill_print_id"></span> @ Rs. <span id="rate_per_photo_bill_print_id" name="rate_per_photo_bill_print_id"></span>
+                </td>
+                
+                <td>
+                 <span id="photos_bill_print_id" name="photos_bill_print_id"></span>
+                </td>
+            </tr>
+
+            <tr class="item">
+                <td>
+                    Outstation
+                </td>
+                
+                <td>
+                <span id="outstation_bill_print_id" name="outstation_bill_print_id"></span>
+                </td>
+            </tr>
+
+            <tr class="item last">
+                <td>
+                 Miscellaneous postage charges
+
+                </td>
+                
+                <td>
+                   <span id="miscellaneous_bill_print_id" name="miscellaneous_bill_print_id"></span>
+                </td>
+            </tr>
+            
+            <tr class="total">
+                <td></td>
+                
+                <td>
+                   Total:  <span id="total_bill_print_id" name="total_bill_print_id" onload="toWords(this.value)"></span>
+                </td>
+                
+
+            </tr>
+
+            <tr>
+            <td>
+         <h3 style="font-size:20px";></style>  <u>  <span id="word_bill_print_id" name="word_bill_print_id" ></span></u></h3>
+         <h3 style="text-align:center;font-size:20px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <span id="p_name" name="p_name"></span><br></h3>
+           
+            <h3 style="font-size:20px"> <b> Bank Details for ECS payment</b></span></h3>
+            </span>
+
+              </td>
+
+              </tr>
+       
+
+
+       
+
+            
+       
+            <tr class="details">
+                <td>
+                  Name of the Bank & Branch<br>
+                   
+                </td>
+                
+                <td>
+                 <span id="p_bank" name="p_bank"></span><br>
+                </td>
+            </tr>
+            
+             <tr class="details">
+                <td>
+                   Account Number<br>
+                </td>
+                
+                <td>
+                    <span id="p_account" name="p_account"></span><br>
+                </td>
+            </tr>
+
+            <tr class="details">
+                <td>
+                    MICR Number<br>
+                </td>
+                
+                <td>
+                     <span id="p_micr" name="p_micr"></span><br>
+                </td>
+            </tr>
+
+
+
+                <tr class="details">
+                <td>
+                    ISF code<br>
+                </td>
+                
+                <td>
+                      <span id="p_isf" name="p_isf"></span>
+                
+                </td>
+            </tr>
+            
+ </table>
+
+    </div>
+
+    </article>
+
+
+
+
+  
+
+    </body>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap-timepicker.min.js"></script>
+        <script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+        <script src="js\pouchdb-6.1.2.min.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/serial.js" type="text/javascript"></script>
+         <script src="js/personaldb.js" type="text/javascript"></script>
+         <script src="js/finalprivate/finalprivatedb.js" type="text/javascript"></script>
+       
+        
+        <script src="js/viewbillwords.js" type="text/javascript"></script>
+         
+       
+        <script >
+
+           //  var aValue = localStorage.getItem("spot_private");
+        function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+
+
+      
+        </script>
+
+ <script type="text/javascript">
+ 
+ 
+     //document.getElementById("word_bill_print_id").innerHTML=str;
+ </script>
+</html>

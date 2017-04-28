@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Spot Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/printpreview.css">
+        <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">      
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>        
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/converttowords.js" type="text/javascript"></script>        
+        <script src="js/printspotdb.js" type="text/javascript"></script>
+    </head>
+    <body class="print_body_class" >  
+<!--        <article>
+            <section id="bill_header_print_id">
+                <div id="page_header_bill_print_id"></div>
+                <div class="clear_class"></div>
+                <hr class="horizontal_line_class">
+            </section>
+            <section id="bill_details_print_id">
+                <center><b>BILL CUM ADVANCED RECEIPT</b></center><br>
+                <span class="alignleft_class"><label class="label_class">Report No:<span id="report_number_bill_print_id"></span></label></span>
+                <span class="alignright_class"><label class="label_class">Date:<span id="report_date_bill_print_id"></span></label></span>
+                <div class="clear_class"></div>
+                <br>
+                <p>
+                    To,<br>
+                    <span id="manager_of_insurance_company_bill_print_id"></span><br>
+                    <span id="name_of_insurance_company_bill_print_id"></span><br>
+                    <span id="address_of_insurance_company_bill_print_id"></span><br>
+                </p>
+                <label class="label_class">To professional charges for Survey of</label><span class="aligncentre_class">:<span id="vehicle_make_and_model_bill_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Bearing Regn No.</label><span class="aligncentre_class">:<span id="vehicle_registration_number_bill_print_id"></span><b></b></span><br>
+                <label class="label_class">Insured</label><span class="aligncentre_class">:<span id="name_of_insured_bill_print_id"></span></span><br>
+                <span class="aligncentre_class"> <span id="address_of_insured_bill_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Policy No.</label><span class="aligncentre_class">:<span id="policy_number_bill_print_id"></span></span><br>
+                <label class="label_class">Claim No.</label><span class="aligncentre_class">:<span id="claim_number_bill_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class"><u>Particulars</u></label><u class="aligncentre_class">Amount</u><br>
+                <label class="label_class">Professional fee</label><br>
+                <label class="label_class">a. Spot Survey/ Preliminary</label><span class="aligncentre_class">:Rs. <span id="spot_survey_bill_print_id"></span></span><br>
+                <label class="label_class">b. Final Survey</label><span class="aligncentre_class">:Rs. <span id="final_survey_bill_print_id"></span></span><br>
+                <label class="label_class">c. Reinspection</label><span class="aligncentre_class">:Rs. <span id="reinspection_bill_print_id"></span></span><br>
+                <label class="label_class">d. Opinion</label><span class="aligncentre_class">:Rs. <span id="opinion_bill_print_id"></span></span><br>
+                <label class="label_class">e. Bill Check</label><span class="aligncentre_class">:Rs. <span id="check_bill_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Travelling Expenses</label><br>
+                <label class="label_class">a. Local</label><span class="aligncentre_class">:Rs. <span id="local_expense_bill_print_id"></span></span><br>
+                <label class="label_class">Place of Survey</label><span class="aligncentre_class">:<span id="local_location_bill_print_id"></span></span><br>
+                <label class="label_class">Total Distance Travelled</label><span class="aligncentre_class">:<span id="local_distance_bill_print_id"></span></span><br>
+                <label class="label_class">b. Outstation</label><span class="aligncentre_class">:Rs. <span id="outstation_expense_bill_print_id"></span></span><br>
+                <label class="label_class">Place of Survey</label><span class="aligncentre_class">:<span id="outstation_location_bill_print_id"></span></span><br>
+                <label class="label_class">Total Distance Travelled</label><span class="aligncentre_class">:<span id="outstation_distance_bill_print_id"></span></span><br>                
+                <br>
+                <label class="label_class">Photos</label> <span id="number_of_photos_bill_print_id"></span> @ Rs. <span id="rate_per_photo_bill_print_id"></span> <span class="aligncentre_class">:Rs. <span id="photos_bill_print_id"></span></span><br>                
+                <label class="label_class">Outstation allowance</label><span class="aligncentre_class">:Rs. <span id="outstation_bill_print_id"></span></span><br>
+                <label class="label_class">Miscellaneous - Postage charges</label><span class="aligncentre_class">:Rs. <span id="miscellaneous_bill_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class"><b>Total</b></label><span class="aligncentre_class">:<b>Rs. <span id="total_bill_print_id"></span></b></span><br>                
+                <label>In Words <span id="total_bill_in_words_print_id"></span></label><br>
+                <div class="clear_class"></div>
+                <hr class="horizontal_line_class">
+            </section>
+            <section id="signature_bill_print_id">
+                <div id="page_signature_bill_print_id"></div>
+                <div class="clear_class"></div>
+            </section>
+            <section id="footer_bill_print_id">
+                <div id="page_footer_bill_print_id"></div>
+                <div class="clear_class"></div>
+            </section>            
+        </article>
+        <div class="page_break"></div>-->
+        <article >
+            <section id="page_header_section_print_id">
+                <div id="page_header_print_id"></div>
+                <div class="clear_class"></div>
+            </section>
+            <section id="motor_details_print_id">
+                <!--<hr class="horizontal_line_class">-->
+                <center><b>MOTOR <span id="report_mode_print_id"></span> SURVEY REPORT<br>
+                        Private & Confidential</b></center><br>
+                <span class="alignleft_class"><label class="label_class">Report No:</label><span id="report_number_print_id"></span></span>
+                <span class="alignright_class"><label class="label_class">Date:</label><span id="report_date_print_id"></span></span>
+                <div class="clear_class"></div>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;This report is issued without prejudice, in respect of cause, nature and extent of loss/ damage & subject to the terms and conditions of the Insurance Policy 
+                    and Insurer admitting liability.</p>
+                <label class="label_class">Policy No.</label><span class="aligncentre_class">:<b><span id="policy_number_print_id"></span></b></span><br>
+                <label class="label_class">Claim No.</label><span class="aligncentre_class">:<span id="claim_number_print_id"></span></span>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section>
+                To,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="manager_of_insurance_company_print_id"></span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="name_of_insurance_company_print_id"></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp; <span id="address_of_insurance_company_print_id"></span><br>                
+            </section>
+            <section id="insurance_particulars_print_id">
+                <label class="label_class"><b><u>Insurance Particulars</u></b></label><br>
+                <label class="label_class">Insurer</label>
+                <span class="aligncentre_class">:<span id="insurer_company_name_print_id"></span></span><br>
+                <span class="aligncentre_class"> <span id="insurer_company_address_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Insured</label>
+                <span class="aligncentre_class">:<b><span id="insured_name_print_id"></span></b></span><br>
+                <span class="aligncentre_class"> <span id="insured_address_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Period of Insurance</label><span class="aligncentre_class">:<span id="period_of_insurance_from_print_id"></span> to <span id="period_of_insurance_to_print_id"></span></span><br>
+                <label class="label_class">Endorsement No.</label><span class="aligncentre_class">:<span id="insured_endorsement_print_id"></span></span><br>
+                <label class="label_class">Sum Insured</label><span class="aligncentre_class">:Rs. <span id="insured_sum_insured_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">H.P.A/ H.Y.P with</label><span class="aligncentre_class">:<span id="hpa_hyp_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="vehicle_particulars_print_id">
+                <label class="label_class"><b><u>Vehicle Particulars</u></b></label><br>
+                <label class="label_class">R.C. Verified</label><span class="aligncentre_class">:<span id="vehicle_rc_verified_print_id"></span></span><br>
+                <label class="label_class">Date of Registration</label><span class="aligncentre_class">:<span id="vehicle_registration_date_print_id"></span></span><br>
+                <label class="label_class">Registration No.</label><span class="aligncentre_class">:<b><span id="vehicle_registration_number_print_id"></span></b></span><br>
+                <label class="label_class">Make</label><span class="aligncentre_class">:<span id="vehicle_make_print_id"></span></span><br>
+                <label class="label_class">Model</label><span class="aligncentre_class">:<span id="vehicle_model_print_id"></span></span><br>
+                <label class="label_class">Chassis No.</label><span class="aligncentre_class">:<span id="vehicle_chassis_number_print_id"></span></span><br>
+                <label class="label_class">Engine No.</label><span class="aligncentre_class">:<span id="vehicle_engine_number_print_id"></span></span><br>
+                <label class="label_class">Color</label><span class="aligncentre_class">:<span id="vehicle_colour_print_id"></span></span><br>
+                <label class="label_class">Tax paid</label><span class="aligncentre_class">:<span id="vehicle_tax_paid_print_id"></span></span><br>
+                <label class="label_class">Class of Vehicle</label><span class="aligncentre_class">:<span id="vehicle_class_print_id"></span></span><br>
+                <label class="label_class">Pre-Accident Condition</label><span class="aligncentre_class">:<span id="vehicle_condition_print_id"></span></span><br>               
+                <label class="label_class">Odometer Reader</label><span class="aligncentre_class">:<span id="vehicle_odometer_reading_print_id"></span> Kms</span><br>
+                <label class="label_class">Type of Body</label><span class="aligncentre_class">:<span id="vehicle_body_print_id"></span></span><br>
+                <label class="label_class">RC Validity</label><span class="aligncentre_class">:<span id="vehicle_rc_validity_print_id"></span></span><br>
+                <div class="imt23_class" hidden>
+                    <label class="label_class">Unladen Weight</label><span class="aligncentre_class">:<span id="vehicle_unladen_weight_print_id"></span></span><br>
+                    <label class="label_class">Regd. Laden weight</label><span class="aligncentre_class">:<span id="vehicle_registered_laden_print_id"></span></span><br>
+                    <label class="label_class">Fitness Certificate No</label><span class="aligncentre_class">:<span id="vehicle_fitness_certificate_print_id"></span></span><br>
+                    <label class="label_class">Fitness Certificate Validity</label><span class="aligncentre_class">:<span id="vehicle_fitness_certificate_validity_print_id"></span></span><br>
+                    <label class="label_class">Seating Capacity</label><span class="aligncentre_class">:<span id="vehicle_seating_capacity_print_id"></span></span><br>
+                </div>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>            
+            <section id="permit_particualrs_print_id" class="imt23_class" hidden>
+                <label class="label_class"><b><u>Permit Particulars</u></b></label><br>
+                <label class="label_class">Permit No.</label><span class="aligncentre_class">:<span id="permit_number_print_id"></span></span><br>
+                <label class="label_class">Validity</label><span class="aligncentre_class">:<span id="permit_validity_print_id"></span></span><br>
+                <label class="label_class">Type of Permit</label><span class="aligncentre_class">:<span id="permit_type_print_id"></span></span><br>
+                <label class="label_class">Passenger/ Load Carrying Capacity</label><span class="aligncentre_class">:<span id="permit_load_passenger_capacity_print_id"></span></span><br>
+                <label class="label_class">Route/ Area in which permitted to Ply</label><span class="aligncentre_class">:<span id="permit_route_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="driver_particulars_print_id">
+                <label class="label_class"><b><u>Driver Particulars</u></b></label><br>
+                <label class="label_class">D.L. Verified</label><span class="aligncentre_class">:<span id="dl_verified_print_id"></span></span><br>
+                <label class="label_class">Driver's Details</label><span class="aligncentre_class">:<span id="driver_name_print_id"></span></span><br>
+                <span class="aligncentre_class"> <span id="driver_address_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Driver's License No.</label><span class="aligncentre_class">:<span id="driver_license_number_print_id"></span></span><br>
+                <label class="label_class">Date of Issue</label><span class="aligncentre_class">:<span id="driver_license_date_of_issue_print_id"></span></span><br>
+                <!--<label class="label_class">Vehicles Permitted to Drive</label><span class="aligncentre_class">:<span id="driver_vehicles_permitted_print_id"></span></span><br>-->
+                <div class="table_class" id="vehicle_table_print_id">
+                    <div class="table_row_class">
+                        <div class="table_cell_class">Sl</div>
+                        <div class="table_cell_class">Vehicle Type</div>
+                        <div class="table_cell_class">Date of Issue</div>
+                        <div class="table_cell_class">Date of Expiry</div>
+                        <div class="table_cell_class">Badge</div>
+                    </div>
+                </div>
+                <label class="label_class">Issuing Authority</label><span class="aligncentre_class">:<span id="driver_license_issuing_authority_print_id"></span></span><br>
+                <label class="label_class">Type of License</label><span class="aligncentre_class">:<span id="driver_license_type_print_id"></span></span><br>
+                <label class="label_class">Endorsement if Any</label><span class="aligncentre_class">:<span id="driver_license_endorsement_print_id"></span></span><br>                
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="trip_sheet_print_id" class="imt23_class" hidden>
+                <label class="label_class"><b><u>Details of Load/ Trip Sheet</u></b></label><br>
+                <label class="label_class">Nature of Goods Carried</label><span class="aligncentre_class">:<span id="nature_of_goods_carried_print_id"></span></span><br>
+                <label class="label_class">weight of goods</label><span class="aligncentre_class">:<span id="weight_of_goods_print_id"></span></span><br>
+                <label class="label_class">No. of Passengers Carried</label><span class="aligncentre_class">:<span id="passengers_carried_print_id"></span></span><br>
+                <label class="label_class">Transported from</label><span class="aligncentre_class">:<span id="transported_from_print_id"></span></span><br> 
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>               
+            <section id="accident_particulars_print_id">
+                <label class="label_class"><b><u>Accident Particulars</u></b></label><br>
+                <label class="label_class">Date</label><span class="aligncentre_class">:<span id="date_of_accident_print_id"></span></span><br>
+                <label class="label_class">Time</label><span class="aligncentre_class">:<span id="time_of_accident_print_id"></span></span><br>
+                <label class="label_class">Place</label><span class="aligncentre_class">:<span id="place_of_accident_print_id"></span></span><br>
+                <label class="label_class">Cause of Accident/ Damage</label><span class="aligncentre_class">:<span id="cause_of_accident_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Details of T.P Property Damage</label><span class="aligncentre_class">:<span id="details_of_damage_print_id"></span></span><br>
+                <label class="label_class">Details of Injuries</label><span class="aligncentre_class">:<span id="details_of_injuries_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="police_report_print_id">
+                <label class="label_class"><b><u>Police Report</u></b></label><br>
+                <label class="label_class">Accident has been reported to police</label><span class="aligncentre_class">:<span id="accident_reported_print_id"></span></span><br>
+                <label class="label_class">Name of police station</label><span class="aligncentre_class">:<span id="name_of_police_station_print_id"></span></span><br>
+                <label class="label_class">F.I.R details</label><span class="aligncentre_class">:<span id="fir_details_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="declaration_details_print_id">
+                <p>Acting upon instruction from <span id="insurance_company_address_declaration_print_id"></span>, I the undersigned Surveyor & Loss Assessor,
+                    visited at the workshop of <span id="place_of_survey_declaration_print_id"></span> on <span id="date_of_survey_declaration_print_id"></span>,
+                    to hold Preliminary survey of above said vehicle which is said to have been met with accident at above said place & now the same has been shifted
+                    to above said workshop. After a thorough & minute inspection of the same, the details of damage as visible from outside are listed as follows</p>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="survey_details_print_id">
+                <label class="label_class"><b><u>Survey Details</u></b></label><br>
+                <label class="label_class">Date of request for Survey</label><span class="aligncentre_class">:<span id="survey_date_request_print_id"></span></span>
+                <div class="table_class" id="survey_table_print_id">
+                    <div class="table_row_class">
+<!--                        <div class="table_cell_class">Sl.</div>
+                        <div class="table_cell_class">Date</div>
+                        <div class="table_cell_class">Time</div>-->
+                    </div>
+                </div>
+                <label class="label_class">Place of Survey</label><span class="aligncentre_class">:<span id="place_of_survey_print_id"></span></span>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>           
+            <section id="spot_observations_print_id">
+                <label class="label_class"><b><u>Spot/ Preliminary Observation</u></b></label><br>
+                <div id="spot_comments_print_id"></div>
+                <!--                <label class="label_class">1.</label>
+                                <span id="rc_dl_verified_print_id" hidden>RC & DL produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                <span id="rc_produced_print_id" hidden>RC produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                <span id="dl_produced_print_id" hidden>DL produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                <span id="no_documents_produced_id" hidden>None of the documents produced for verification.<br></span>                      
+                                <label class="label_class">2. Chassis and engine numbers physically verified.</label><br>
+                                <label class="label_class">3. Photos of damaged vehicles enclosed.</label><br>
+                                <label class="label_class">4. In my opinion, the above assessed loss is attributable to the stated version of the accident.</label><br>
+                                <label class="label_class">5. Repairers consent is obtained for the revisions done in the estimate.</label><br>-->
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="surveyor_observations_print_id">
+                <label class="label_class"><b><u>Surveyor Observations</u></b></label><br>
+                <div id="surveyor_comments_print_id"></div>
+                <!--                <label class="label_class">1.</label>
+                                <span id="rc_dl_verified_print_id" hidden>RC & DL produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                <span id="rc_produced_print_id" hidden>RC produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                <span id="dl_produced_print_id" hidden>DL produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                <span id="no_documents_produced_id" hidden>None of the documents produced for verification.<br></span>                      
+                                <label class="label_class">2. Chassis and engine numbers physically verified.</label><br>
+                                <label class="label_class">3. Photos of damaged vehicles enclosed.</label><br>
+                                <label class="label_class">4. In my opinion, the above assessed loss is attributable to the stated version of the accident.</label><br>
+                                <label class="label_class">5. Repairers consent is obtained for the revisions done in the estimate.</label><br>-->
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="signature_page_print_id">
+                <div id="page_signature_print_id"></div>
+                <div class="clear_class"></div>                
+            </section>
+        </article>
+    </body>
+</html>

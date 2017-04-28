@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Insurance:Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" type="text/css" href="css/finalprivate.css">
+        <link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-timepicker.min.css">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/stylee.css">     
+    </head>
+    <body background="images/lbbackground.jpg" >
+        <nav id="myNavbar" class="navbar navbar-default navbar-inverse " role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<a class="navbar-brand" href="index.html">HOME</a>-->
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Survey
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown dropdown-submenu">
+                                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Final Survey</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="active ">
+                                            <a href="displaytable.html">Private</a>
+                                        </li>
+                                        <li >
+                                            <a href="commercialtable.html">Commercial</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu">
+                                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Spot Survey</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="displayspotTable.html">Private</a>
+                                        </li>
+                                        <li >
+                                            <a href="displayspotcommercial.html">Commercial</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown ">
+                                    <a  href="displayreinspection.html">Re-inspection</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="reporthistory.html">Report History</a></li>
+                        <li><a href="company.html">Insurance Companies</a></li>
+                        <li><a href="personal.html">Personal Details</a></li>
+                        <li><a href="accounts.html">Accounts</a></li>
+                        <li><a  href="#" onclick="logout()">Logout</a></li>
+                        <li><a  href="settings.html">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <article class="container" id="boxshadow" style="background-color:white;">
+            <form action="" id="form_final_private_id" style="padding-top: 10px;" name="final_private_form">
+               
+                <fieldset>
+                    <legend class="control-label">Final Survey - Private</legend>
+                    <!--action value? auto generate reference no and edit if necessary-->
+                    <div class="row" >
+                        <div class="col-xs-2 ">
+                            <label  for="report_number_final_private_id">Report No.:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <!--on change load again change sessionStorage value-->
+                            <input type="text" class="form-control" id="report_number_final_private_id" name="report_number_final_private_id" >
+                            <!--onblur="setReportNo()"-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label for="report_date_final_private_id">Date:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input  type="text" class="form-control" placeholder="click to select date" name="report_date_final_private_id"  id="report_date_final_private_id">
+                        </div>
+                    </div>
+<!--                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Statement:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <textarea class="form-control" id="statement_final_private_id" rows="4" cols="30"></textarea>
+                        </div>
+                    </div>-->
+                    <!--'To:' auto complete from insurance list, 'Code:' should auto populate based on 'To:'-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label for="company_code_final_private_id">Company Code:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="text" size=6 autocomplete="on" id="company_code_final_private_id" name="company_code_final_private_id" class="form-control" maxlength="6" >
+                            <!--onblur="companyCodeAuto(this.id, this.value)"-->
+                            <span id="cc_error_msg" style="color:red;"></span>
+                            <span id="error" style="color:red;"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>To:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select id="company_manager_final_private_id" name="company_manager_final_private_id" class="form-control">
+                               <option value="">Select</option> 
+                                <option value="Sr. Divisional Manager">Sr. Divisional Manager</option>
+                                <option value="Sr. Branch Manager">Sr. Branch Manager</option>
+                                <option value="Branch Manager">Branch Manager</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label for="company_name_final_private_id">Company:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="text" autocomplete="on" id="company_name_final_private_id" name="company_name_final_private_id" class="form-control">
+                        </div>
+                    </div>
+                    <!--address to be filled automatically based on 'To:' & 'Code:'-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label for="company_address_final_private_id">Address:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <textarea  rows="4" cols="30" id="company_address_final_private_id" name="company_address_final_private_id" class="form-control" ></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label> Policy/ Cover note no.:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            
+                                <input type="text"  id="policy_number_code_final_private_id" name="policy_number_code_final_private_id" class="form-control" >
+                                <!--<label class="input-group-addon">-</label>
+                                <input class="form-control" type="text" name="policy_number_final_private_id" id="policy_number_final_private_id" maxlength="6">-->
+                
+                            <span id="pn_error_msg" style="color:red;"></span>
+                            <span id="pc_error_msg" style="color:red;"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label> Claim No:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            
+                                <input type="text" size=6 id="claim_number_code_final_private_id" name="claim_number_code_final_private_id" class="form-control">
+                                <!--<label class="input-group-addon">-</label>
+                                <input class="form-control" type="text" id="claim_number_final_private_id" name="claim_number_final_private_id" maxlength="6">-->
+                            
+                            <span id="cn_error_msg" style="color:red;"></span>
+                            <span id="c1_error_msg" style="color:red;"></span>
+                        </div>
+                        <!--insurers should auto populate based on ?-->
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Insurer Code:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="text" size=6 autocomplete="on" id="insurer_code_final_private_id" name="insurer_code_final_private_id" class="form-control" maxlength="6" >
+                            <!--onblur="companyCodeAuto(this.id, this.value)-->
+                            <span id="ic_error_msg" style="color:red;"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--do autocomplete based on insurance company database-->
+                        <div class="col-xs-2">
+                            <label>Insurers Name:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input  class="form-control" type="text" id="insurer_name_final_private_id" name="insurer_name_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Address:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <textarea  class="form-control" rows="4" cols="30" id="insurer_address_final_private_id" name="insurer_address_final_private_id"></textarea>
+                        </div>
+                    </div>
+                    <!--manual-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Insured Name:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="insured_name_final_private_id" name="insured_name_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Address:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <textarea  class="form-control" rows="4" cols="30" id="insured_address_final_private_id" name="insured_address_final_private_id"></textarea>
+                        </div>
+                    </div>
+                    <!--'To:' should be calculated 'From:' for a year-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Period of Insurance</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <label>From:</label>
+                            <input  type="text" class="form-control"  name="insurance_period_from_final_private_id" placeholder="click to select date"  id="insurance_period_from_final_private_id">
+                            <label>To:</label>
+                            <!--check with date of accident and display message-->
+                            <input  type="text" class="form-control" placeholder="click to select date" name="insurance_period_to_final_private_id" id="insurance_period_to_final_private_id">
+                        </div>
+                    </div>
+                    <!--manual-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Endorsement No:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" name="insurance_endorsement_final_private_id" id="insurance_endorsement_final_private_id">
+                            <span id="en_error_msg" style="color:red;"></span>
+                        </div>
+                    </div>
+                    <!--manual-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label >Sum Insured: </label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" name="sum_insured_final_private_id" id="sum_insured_final_private_id">
+                        </div>
+                    </div>
+                    <!--manual-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label >H.P.A./ H.Y.P. with:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text"  name="hpahyp_final_private_id" id="hpahyp_final_private_id">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset >
+                    <legend class="control-label">Vehicle Particulars</legend>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>RC Verified:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select id="rc_verification_selection_final_private_id" name="rc_verification_selection_final_private_id" class="form-control">
+                               <option value="">Select</option> 
+                                <option value="RC verified with respect to original">RC verified with respect to original</option>
+                                <option value="Copy of RC produced for verification">Copy of RC produced for verification</option>
+                                <option value="RC verified by insurer">RC verified by insurer</option>
+                                <option value="RC not produced for verification">RC not produced for verification</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Registration No:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" autocomplete="on" id="vehicle_registerd_number_final_private_id" name="vehicle_registerd_number_final_private_id">
+                        </div>
+                        <span id="dr_error_msg" style="color:red;"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Date of Registration:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input  type="text" class="form-control" placeholder="click to select date"  id="vehicle_registration_date_final_private_id" name="vehicle_registration_date_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Make:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="vehicle_make_final_private_id" name="vehicle_make_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Model:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="vehicle_model_final_private_id" name="vehicle_model_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Chassis No:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="vehicle_chassis_number_final_private_id" name="vehicle_chassis_number_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Engine No:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="vehicle_engine_number_final_private_id" name="vehicle_engine_number_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Colour of the Vehicle:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="vehicle_colour_final_private_id" name="vehicle_colour_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Road Tax Particulars:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="road_tax_selection_final_private_id" name="road_tax_selection_final_private_id" onchange="roadTaxSelection()">
+                               <option value="">Select</option> 
+                                <option value='Life Time Tax Paid'>Life Time Tax Paid</option>
+                                <option value='Paid upto'>Paid upto</option>
+                                <option value='Tax not produced for verification'>Tax not produced for verification</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-3" id="road_tax_display" hidden>
+                            <input id="road_tax_date_final_private_id" name="road_tax_date_final_private_id" class="form-control" placeholder="click to select date" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Type of Body:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="vehicle_body_type_final_private_id" name="vehicle_body_type_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Class of Vehicle:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="vehicle_class_final_private_id" name="vehicle_class_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>General condition of the vehicle:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select class="form-control" id="vehicle_condition_selection_final_private_id" name="vehicle_condition_selection_final_private_id">
+                               <option value="">Select</option> 
+
+                                <option value="Good">Good</option>
+                                <option value="Fair">Fair</option>
+                                <option value="Average">Average</option>
+                                <option value="Bad">Bad</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Odometer Reading:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text"  name="vehicle_odometer_reading_final_private_id" id="vehicle_odometer_reading_final_private_id">
+                        </div>
+                    </div>
+                    <!--imt23?-->
+                    <!--                        <div class="row imt23">
+                                                <div class="col-xs-2">
+                                                    <label>UnLaden Weight:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <input class="form-control" type="text" id="vehicle_unladen_weight_final_private_id">
+                                                </div>
+                                            </div>
+                                            <div class="row imt23">
+                                                <div class="col-xs-2">
+                                                    <label>Regd. Laden Weight:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <input class="form-control" type="text" id="vehicle_registered_laden_weight_final_private_id">
+                                                </div>
+                                            </div>
+                                            <div class="row imt23">
+                                                <div class="col-xs-2">
+                                                    <label> Fitness Certificate:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <input class="form-control" type="text" id="vehicle_fitness_certificate_final_private_id">
+                                                </div>
+                                            </div>
+                                            <div class="row imt23">
+                                                <div class="col-xs-2">
+                                                    <label>Fitness Certificate Validity:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <input  type="text" class="form-control" placeholder="click to select date"  id="vehicle_fitness_certificate_validity_final_survey_id">
+                                                    <input class="form-control" type="date" id="vehicle_date_registration_final_survey_id">
+                                                </div>
+                                            </div>-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>R.C. Validity:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input  type="text" class="form-control" placeholder="click to select date"  id="vehicle_rc_validity_final_private_id" name="vehicle_rc_validity_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Seating capacity:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="vehicle_seating_capacity_final_private_id" name="vehicle_seating_capacity_final_private_id">
+                        </div>
+                    </div>
+                </fieldset>
+                <!--                    <fieldset class="imt23" hidden>
+                                        <legend class="control-label">Permit Particulars:</legend>
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <label>Permit No:</label>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" type="text" id="vehicle_permit_number_final_private_id">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <label>Validity:</label>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" type="text" id="vehicle_validity_final_private_id">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <label>Type of Permit:</label>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" type="text" id="vehicle_permit_type_final_private_id">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <label>Passenger/ Load Carrying Capacity:</label>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" type="text" id="vehicle_passenger_load_final_private_id">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <label>Route/ Area in which permitted to ply:</label>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" type="text" id="vehicle_area_permitted_final_private_id">
+                                            </div>
+                                        </div>
+                                    </fieldset>-->
+                <!--manual-->
+                <!--auto populate based on drivers license-->
+                <fieldset>
+                    <legend class="control-label">Driver Particulars</legend>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>DL Verified:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select  class="form-control" id="dl_verification_selection_final_private_id" name="dl_verification_selection_final_private_id">
+                               <option value="">Select</option> 
+
+                                <option value="DL verified with respect to original">DL verified with respect to original</option>
+                                <option value="Copy of DL produced for verification">Copy of DL produced for verification</option>
+                                <option value="DL verified by insurer">DL verified by insurer</option>
+                                <option value="DL not produced for verification">DL not produced for verification</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--while printing name first and then drivers license-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Driving License No:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="dl_number_final_private_id" name="dl_number_final_private_id" >
+                            <!--onblur="dlDataAuto(this.value)">-->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Name:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="dl_name_final_private_id" name="dl_name_final_private_id">
+                        </div>
+                    </div>
+
+                    <!--while printing name & address to be together-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Address:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <textarea class="form-control" rows="4" cols="30" id="dl_address_final_private_id" name="dl_address_final_private_id" ></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Date of issue:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input  type="text" class="form-control" placeholder="click to select date"  id="dl_issue_date_final_private_id" name="dl_issue_date_final_private_id">
+                            <!--<input class="form-control" type="date">-->
+                        </div>
+                    </div>
+                    <!--class of vehicles should be expandable and collapsible-->
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <label>Class of vehicles permitted to drive: (Use alt+shift+v to add new entry. Upto five entries supported.)</label>
+                        </div>
+                    </div>
+                    <!--for vehicle list-->
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <div class="table_class" id="vehicleListsTable" name="vehicleListsTable">
+                                <div class="table_row_class">
+                                    <div class="table_cell_class">Sl. No.</div>
+                                    <div class="table_cell_class">Type</div>
+                                    <div class="table_cell_class">Effective from</div>
+                                    <div class="table_cell_class">Valid upto</div>
+                                    <div class="table_cell_class">Badge No.</div>
+                                </div>
+                            </div>
+                            <input type="button" value="Add New Vehicle" onclick="addRow(0)" hidden accesskey="v"  name="final_private_vehicle_data">
+                        </div>
+                    </div>
+                    <!--more-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Issuing Authority:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="dl_issuing_authority_final_private_id" name="dl_issuing_authority_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Type of License:</label>
+
+
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="dl_type_final_private_id" name="dl_type_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Endorsement if any:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="dl_endorsements_final_private_id" name="dl_endorsements_final_private_id">
+                        </div>
+                    </div>
+                </fieldset>
+                <!--                    <fieldset class="imt23" hidden>
+                                        <legend>Details of Load Challan/ Trip Sheet</legend>
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <label>Nature of Goods Carried & Its Weight:</label>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" type="text" id="nature_of_goods_carried_final_private_id">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <label> No of passengers carried:</label>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" type="text" id="number_of_passengers_final_private_id">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-2">
+                                                <label>Transported from:</label>
+                                            </div>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" type="text" id="transported_from_final_private_id">
+                                            </div>
+                                        </div>
+                                    </fieldset>-->
+                <fieldset>
+                    <legend class="control-label">Accident Particulars</legend>
+                    <!--date and time should check if it is covered within policy else flag-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label> Date:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input  type="text" class="form-control" placeholder="click to select date" name="accident_date_final_private_id" id="accident_date_final_private_id">
+                            <!--<input class="form-control" type="date">-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Time:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="time" id="accident_time_final_private_id" name="accident_time_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Place:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="accident_place_final_private_id" name="accident_place_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Cause of Accident/ Damage:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <textarea class="form-control" rows="4" cols="30" id="accident_cause_final_private_id" name="accident_cause_final_private_id"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Details of T.P Property Damage</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="property_damage_final_private_id" name="property_damage_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Details of Injuries</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="details_of_injury_final_private_id" name="details_of_injury_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Acc. reported to police</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="accident_reported_to_police_final_private_id" name="accident_reported_to_police_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Name of police station</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="name_of_police_station_final_private_id" name="name_of_police_station_final_private_id">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>F.I.R details</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <textarea class="form-control" rows="4" cols="30" id="fir_details_final_private_id" name="fir_details_final_private_id"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="control-label">Survey Details</legend>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Date of request for Survey: </label>
+                        </div>
+
+                        <div class="col-xs-3">
+                            <input  type="text" class="form-control" placeholder="click to select date" id="survey_request_date_final_private_id" name="survey_request_date_final_private_id">
+                        </div>
+                    </div>
+                    <!--auto expanding list-->
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <label>Dates & Time of Survey: (Use alt+shift+s to add new entry. Upto three entries supported)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <div class="table_class" id="surveyDatesTable" name="surveyDatesTable">
+                                <div class="table_row_class">
+                                    <div class="table_cell_class">Sl. No.</div>
+                                    <div class="table_cell_class">Date</div>
+                                    <div class="table_cell_class">Time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--what to do for date-->
+                    <input type="button" value="Add New Survey Date" onclick="addRow(1)" accesskey="s" hidden name="final_private_survey_data">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Place of Survey:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="text" id="survey_place_final_private_id" name="survey_place_final_private_id">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="control-label">Annexure A</legend>
+                    <!--                        <div class="imt23">
+                                                <div class="row">
+                                                    <label>Body</label>
+                                                </div>
+                                                <div class="row">
+                                                    <input type="radio" name="body_radio" id="company" value="company" onclick="bodyRadioSelection()" checked/><label for="company">Company</label>
+                                                    <input type="radio" name="body_radio" id="fabricated" value="fabricated" onclick="bodyRadioSelection()"/><label for="fabricated">Fabricated</label><br>
+                                                </div>
+                                                <div id="fabricated_body">
+                                                    <input  type="text" id="fabricated_first_final_private_id">
+                                                    <div class="table_class" id="fabricated_first_table">
+                                                        <div class="table_row_class">
+                                                            <div class="table_cell_class">Sl. No.</div>
+                                                            <div class="table_cell_class">Part Name</div>
+                                                            <div class="table_cell_class">Claimed</div>
+                                                            <div class="table_cell_class">Amount as per Invoice</div>
+                                                            <div class="table_cell_class">Repaired</div>
+                                                            <div class="table_cell_class">Nature of damage</div>
+                                                            <div class="table_cell_class">Material</div>
+                                                            hidden for private not working
+                                                            <div class="table_cell_class">IMT23</div>
+                                                            <div class="table_cell_class">Deleted</div>
+                                                            <div class="table_cell_class" id="reason_column_0">Reason for Deletion</div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" value="Add New Part" onclick="addRowFabricated(0)"><br>
+                                                    <input type="text" id="fabricated_second_final_private_id">
+                                                    <div class="table_class" id="fabricated_second_table">
+                                                        <div class="table_row_class">
+                                                            <div class="table_cell_class">Sl. No.</div>
+                                                            <div class="table_cell_class">Part Name</div>
+                                                            <div class="table_cell_class">Claimed</div>
+                                                            <div class="table_cell_class">Assessed</div>
+                                                            <div class="table_cell_class">Repaired</div>
+                                                            <div class="table_cell_class">Nature of damage</div>
+                                                            <div class="table_cell_class">Material</div>
+                                                            hidden for private not working
+                                                            <div class="table_cell_class">IMT23</div>
+                                                            <div class="table_cell_class">Deleted</div>
+                                                            <div class="table_cell_class" id="reason_column_1">Reason for Deletion</div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" value="Add New Part" onclick="addRowFabricated(1)"><br>
+                                                    <input type="text" id="fabricated_third_final_private_id">
+                                                    <div class="table_class" id="fabricated_third_table">
+                                                        <div class="table_row_class">
+                                                            <div class="table_cell_class">Sl. No.</div>
+                                                            <div class="table_cell_class">Part Name</div>
+                                                            <div class="table_cell_class">Claimed</div>
+                                                            <div class="table_cell_class">Assessed</div>
+                                                            <div class="table_cell_class">Repaired</div>
+                                                            <div class="table_cell_class">Nature of damage</div>
+                                                            <div class="table_cell_class">Material</div>
+                                                            hidden for private not working
+                                                            <div class="table_cell_class">IMT23</div>
+                                                            <div class="table_cell_class">Deleted</div>
+                                                            <div class="table_cell_class" id="reason_column_2">Reason for Deletion</div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" value="Add New Part" onclick="addRowFabricated(2)"><br>
+                                                    <input type="text" id="fabricated_fourth_final_private_id">
+                                                    <div class="table_class" id="fabricated_fourth_table">
+                                                        <div class="table_row_class">
+                                                            <div class="table_cell_class">Sl. No.</div>
+                                                            <div class="table_cell_class">Part Name</div>
+                                                            <div class="table_cell_class">Claimed</div>
+                                                            <div class="table_cell_class">Assessed</div>
+                                                            <div class="table_cell_class">Repaired</div>
+                                                            <div class="table_cell_class">Nature of damage</div>
+                                                            <div class="table_cell_class">Material</div>
+                                                            hidden for private not working
+                                                            <div class="table_cell_class">IMT23</div>
+                                                            <div class="table_cell_class">Deleted</div>
+                                                            <div class="table_cell_class" id="reason_column_3">Reason for Deletion</div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" value="Add New Part" onclick="addRowFabricated(3)"><br>
+                                                    <input type="text" id="fabricated_fifth_final_private_id">
+                                                    <div class="table_class" id="fabricated_fifth_table">
+                                                        <div class="table_row_class">
+                                                            <div class="table_cell_class">Sl. No.</div>
+                                                            <div class="table_cell_class">Part Name</div>
+                                                            <div class="table_cell_class">Claimed</div>
+                                                            <div class="table_cell_class">Assessed</div>
+                                                            <div class="table_cell_class">Repaired</div>
+                                                            <div class="table_cell_class">Nature of damage</div>
+                                                            <div class="table_cell_class">Material</div>
+                                                            hidden for private not working
+                                                            <div class="table_cell_class">IMT23</div>
+                                                            <div class="table_cell_class">Deleted</div>
+                                                            <div class="table_cell_class" id="reason_column_4">Reason for Deletion</div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="button" value="Add New Part" onclick="addRowFabricated(4)"><br>
+                                                </div>
+                                            </div>-->
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input type="radio" name="excel" id="normal_table" value="normal_table" checked/><label for="normal_table">Normal Table Print</label>
+                            <input type="radio" name="excel" id="excel_table" value="excel_table"/><label for="excel_table">Excel Table Print</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input type="radio" name="parts" id="vat_on_total" value="vat_on_total" checked/><label for="vat_on_total">VAT on total</label>
+                            <input type="radio" name="parts" id="vat_on_parts" value="vat_on_parts"/><label for="vat_on_parts">VAT on parts</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input type="radio" name="nil" id="not_nil" value="not_nil" checked/><label for="not_nil">Not Nil Policy</label>
+                            <input type="radio" name="nil" id="nil" value="nil"/><label for="nil">Nil Policy</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input type="radio" name="vat" id="with_vat" value="with_vat" checked/><label for="with_vat">With Vat</label>
+                            <input type="radio" name="vat" id="without_vat" value="without_vat"/><label for="without_vat">Without Vat</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <input type="radio" name="labour" id="with_service_tax" value="with_service_tax" checked/><label for="with_service_tax">With service tax</label>
+                            <input type="radio" name="labour" id="without_service_tax" value="without_service_tax"/><label for="without_service_tax">Without service tax</label>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 row">
+                        <label>Painting</label>
+                    </div>
+                    <div class="col-xs-10 row">
+                        <!--<input type="radio" name="painting" id="regular" value="regular" onclick="paintingRadioSelection()" checked/><label for="regular">Regular</label>
+                        <input type="radio" name="painting" id="regular_service_tax" value="regular_service_tax" onclick="paintingRadioSelection()"/><label for="regular_service_tax">Regular with Service Tax</label>-->
+                        <input type="radio" name="painting" id="75_25" value="75_25" onclick="paintingRadioSelection()"/><label for="75_25">75%-25%</label>
+                        <input type="radio" name="painting" id="75_25_service_tax" value="75_25_service_tax" onclick="paintingRadioSelection()"/><label for="75_25_service_tax">75%-25% with Service Tax</label>
+                        <input type="radio" name="painting" id="schedule" value="schedule" onclick="paintingRadioSelection()"/><label for="schedule">As Per Schedule</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <label>Description of Spare Parts require replacement - Cost: (Use alt+shift+p to add new entry.)<br></label>
+                        </div>
+                    </div>
+                    <div id="schedule_painting_final_survey_id" name="final_private_schedule_painting" hidden>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label>As per Schedule</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label><input type="number" min="0" max="100" id="schedule_painting_labour_percentage_final_private_id" name="schedule_painting_labour_percentage_final_private_id" onblur="setLabourPercentage(this.value)">% of labour</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label><input type="number" min="0" max="100" id="schedule_painting_material_percentage_final_private_id" name="schedule_painting_material_percentage_final_private_id"onblur="setMaterialPercentage(this.value)">% of material</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--                        <div class="row imt23">
+                                                <div class="col-xs-10">
+                                                    <input type="radio" name="imt23" id="imt23_50" value="imt23_50" onclick="imt23PercentageSelection()" checked/><label for="imt23_50">imt23 @ 50%</label>
+                                                    <input type="radio" name="imt23" id="imt23_25" value="imt23_25" onclick="imt23PercentageSelection()"/><label for="imt23_25">imt23 @ 25%</label>
+                                                </div>
+                                            </div>-->
+                                            
+                    <div class="table_class" id="damagedPartsTable" name="damagedPartsTable">
+                        <div class="table_row_class " >
+                            <div class="table_cell_class new_css">Sl. No.</div>
+                            <div class="table_cell_class new_css">Part Name</div>
+                            <div class="table_cell_class new_css">QE</div>
+                            <div class="table_cell_class new_css">QA</div>
+                            <!--                                <div class="table_cell_class">Qty. Claimed</div>
+                                                            <div class="table_cell_class">Qty. Assessed</div>-->
+                            <div class="table_cell_class new_css">Claimed</div>
+                            <div class="table_cell_class new_css">Amount as per<br>Invoice</div>
+                            <div class="table_cell_class new_css">Nature of damage</div>
+                            <div class="table_cell_class new_css">Parts</div>
+                            <!--hidden for private then going o commercial doesnt show up rightnot working-->
+                            <!--<div class="table_cell_class imt23">IMT23</div>-->
+                            <!--<div class="table_cell_class">Deleted</div>-->
+                            <div class="table_cell_class new_css" id="parts_reason_column" name="parts_reason_column">Reason for Deletion</div>
+                        </div>
+                    </div>
+                    
+                    <input type="button" id="button" value="Add New Part" onclick="addRow(2)" accesskey="p" hidden >
+                    <!--                        <div class="row">
+                                                <div class="col-xs-10">
+                                                    <label>Painting Charges (Use alt+c to add new entry.)<br></label>
+                                                </div>
+                                            </div>-->
+                    <!--<input type="radio" name="painting" id="regular" value="regular" onclick="paintingRadioSelection()" checked/><label for="regular">Regular</label>-->
+                    <!--                        <div class="table_class" id="paintingChargesTable">
+                                                <div class="table_row_class">
+                                                    <div class="table_cell_class">Sl. No.</div>
+                                                    <div class="table_cell_class">Description of Paint Job</div>
+                                                    <div class="table_cell_class">Claimed</div>
+                                                    <div class="table_cell_class">Assessed</div>
+                                                </div>
+                                            </div>                        -->
+                    <!--                        <div id="seventyFiveTwentyFivePainting" hidden>
+                                                <div class="row">
+                                                    <label> Seventy Five Twenty Five</label>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>Amount:</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;</label><span id="painting_75_25_amount_final_private_id"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>75% labour charges: </label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;<span id="painting_75_labour_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>25% material charges:</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9; <span id="painting_25_material_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                    <!--                        <div id="seventyFiveTwentyFiveServiceTaxPainting" hidden>
+                                                <div class="row">
+                                                    <label> Seventy Five Twenty Five with Service Tax</label>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>Amount:</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;</label><span id="painting_75_25_service_tax_amount_final_private_id"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>75% labour charges: </label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;<span id="painting_75_service_tax_labour_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>25% material charges:</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9; <span id="painting_25_service_tax_material_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class ="row">
+                                                        <div class="col-xs-2">
+                                                            <label>VAT @ 14.5% on material</label>
+                                                        </div>
+                                                        <div class="col-xs-3">
+                                                            <label>&#x20B9;<span id="painting_75_25_vat_total_final_private_id"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class ="row">
+                                                        <div class="col-xs-2">
+                                                            <label>Service Tax @ 14% on labour</label>
+                                                        </div>
+                                                        <div class="col-xs-3">
+                                                            <label>&#x20B9;<span id="painting_75_25_service_tax_total_final_private_id"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-2">
+                                                            <label>Swach Baharat Cess 0.5% on labour</label>
+                                                        </div>
+                                                        <div class="col-xs-3">
+                                                            <label>&#x20B9;<span id="painting_75_25_swach_bharath_total_final_private_id"></span></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-2">
+                                                            <label>Krishi Kalyan Cess 0.5% on labour</label>
+                                                        </div>
+                                                        <div class="col-xs-3">
+                                                            <label>&#x20B9;<span id="painting_75_25_krishi_kalyan_total_final_private_id"></span></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+
+                    <!--                            <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>Amount:</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;</label><span id="schedule_painting_amount_final_private_id"></span>
+                                                    </div>
+                                                </div>-->
+
+                    <!--                            <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>VAT @ 14.5% on <span id="schedule_painting_vat_final_private_id"></span>% of material</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9; <span id="schedule_painting_vat_total_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>Service Tax @ 14% on <span id="schedule_painting_service_tax_final_private_id"></span>% of labour</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9; <span id="schedule_painting_service_tax_total_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                                <div class ="row">
+                                                    <div class="col-xs-2">
+                                                        <label>Swach Baharat Cess 0.5% on <span id="schedule_painting_swach_bharath_final_private_id"></span>% of labour</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;<span id="schedule_painting_swach_bharath_total_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>Krishi Kalyan Cess 0.5% on <span id="schedule_painting_krishi_kalyan_final_private_id"></span>% of labour</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;<span id="schedule_painting_krishi_kalyan_total_final_private_id"></span></label>
+                                                    </div>
+                                                </div>-->
+                    <!--</div>-->
+                    <!--                        <div class="row imt23">
+                                                <div class="col-xs-2">
+                                                    <label>Deduct Excess @ <span id="imt23_painting_percentage_final_private_id"></span>% as per IMT23:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <label>&#x20B9;<span id="imt23_painting_excess_final_private_id"></span></label>
+                                                </div>
+                                            </div>-->
+                    <!--                        <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>Total Amount:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <label>&#x20B9;<span id="painting_amount_total_final_private_id"></span></label>
+                                                </div>
+                                            </div>-->
+
+
+                </fieldset>
+                <fieldset>
+                    <legend>Summary of Assessment</legend>
+                    <div class="table_class">
+                        <div class="table_row_class">
+                            <div class="table_cell_class"><label>Description</label></div>
+                            <div class="table_cell_class"><label>Claimed</label></div>
+                            <div class="table_cell_class"><label>Assessed</label></div>
+                        </div>
+                        <!--                            <div class="table_row_class">
+                                                        <div class="table_cell_class">Repair & Labour Charges</div>
+                                                        <div class="table_cell_class"><span id="labour_claimed_final_private_id"></span></div>
+                                                        <div class="table_cell_class"><span id="labour_assessed_final_private_id"></span></div>
+                                                    </div>
+                                                    <div class="table_row_class">
+                                                        <div class="table_cell_class">Cost of Recommended Spare Parts</div>
+                                                        <div class="table_cell_class"><span id="spare_parts_claimed_final_private_id"></span></div>
+                                                        <div class="table_cell_class"><span id="spare_parts_assessed_final_private_id"></span></div>
+                                                    </div>-->
+                        <div class="table_row_class">
+                            <div class="table_cell_class">Total Labour Charges</div>
+                            <div class="table_cell_class"><input class="form-control" type="number" value="0" min="0" id="total_labour_claimed_final_private_id" name="total_labour_claimed_final_private_id" style="text-align: right"></div>
+                            <div class="table_cell_class"><input class="form-control" type="number" value="0" min="0" id="total_labour_assessed_final_private_id" name="total_labour_assessed_final_private_id" style="text-align: right"></div>
+                        </div>
+                        <div class="table_row_class">
+                            <div class="table_cell_class">Cost of recommended Spare Parts</div>
+                            <div class="table_cell_class"><input class="form-control" type="number" value="0" min="0" id="cost_of_spare_parts_claimed_final_private_id"  name="cost_of_spare_parts_claimed_final_private_id" style="text-align: right"></div>
+                            <div class="table_cell_class"><input class="form-control" type="number" value="0" min="0" id="cost_of_spare_parts_assessed_final_private_id" name="cost_of_spare_parts_assessed_final_private_id" style="text-align: right"></div>
+                        </div>
+                        <div class="table_row_class">
+                            <div class="table_cell_class">Spot Photos</div>
+                            <div class="table_cell_class"><input class="form-control" type="number" value="0" min="0" id="spot_photo_claimed_final_private_id" name="spot_photo_claimed_final_private_id" style="text-align: right"></div>
+                            <div class="table_cell_class"><input class="form-control" type="number" value="0" min="0" id="spot_photo_assessed_final_private_id" name="spot_photo_assessed_final_private_id" style="text-align: right"></div>
+                        </div>
+                        <div class="table_row_class">
+                            <div class="table_cell_class">Spot Repairs/ Towing</div>
+                            <div class="table_cell_class"><input class="form-control" type="number" name="spot_repairs_claimed_final_private_id" value="0" min="0" id="spot_repairs_claimed_final_private_id" style="text-align: right"></div>
+                            <div class="table_cell_class"><input class="form-control" type="number" name="spot_repairs_assessed_final_private_id" value="0" min="0" id="spot_repairs_assessed_final_private_id" style="text-align: right"></div>
+                        </div>
+                        <!--                            <div class="table_row_class">
+                                                        <div class="table_cell_class">Total</div>
+                                                        <div class="table_cell_class"><label>&#x20B9; <span id="claimed_total_final_private_id"></span></label></div>
+                                                        <div class="table_cell_class"><label>&#x20B9; <span id="assesed_total_final_private_id"></span></label></div>
+                                                    </div>-->
+                    </div>
+                    <!--bring to a straight line-->
+                   <!-- <div class="row" style="padding-top: 10px;">
+                        <div class="col-xs-2">
+                            <label>Deduct depreciation @</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select id="metal_percentage_final_private_id" class=" form-control" name="metal_percentage_final_private_id">
+                                <option value='0' selected="selected">0</option>
+                                <option value='5'>5</option>
+                                <option value='10'>10</option>
+                                <option value='15'>15</option>
+                                <option value='25'>25</option>
+                                <option value='35'>35</option>
+                                <option value='40'>40</option>
+                                <option value='50'>50</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-2">
+                            <label>% on Metal Parts</label>
+                        </div>
+                                                    <div class="col-xs-3">
+                                                        <label> &#x20B9;<span id="metal_depreciation_final_private_id"></span></label>
+                                                    </div>
+                    </div>-->
+
+                  <!--  <div class="row" style="padding-top: 10px;">
+                        <div class="col-xs-2">
+                            <label>Deduct depreciation @</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select id="fibre_percentage_final_private_id" class=" form-control" name="fibre_percentage_final_private_id">
+                                <option value='0' selected="selected">0</option>
+                                <option value='5'>5</option>
+                                <option value='10'>10</option>
+                                <option value='15'>15</option>
+                                <option value='25'>25</option>
+                                <option value='35'>35</option>
+                                <option value='40'>40</option>
+                                <option value='50'>50</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-2">
+                            <label>% on Fibre Parts</label>
+                        </div>
+                        </div>
+
+
+                        <div class="row" style="padding-top: 10px;">
+                        <div class="col-xs-2">
+                            <label>Deduct depreciation @</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <select id="plastic_percentage_final_private_id" class=" form-control" name="plastic_percentage_final_private_id">
+                                <option value='0' selected="selected">0</option>
+                                <option value='5'>5</option>
+                                <option value='10'>10</option>
+                                <option value='15'>15</option>
+                                <option value='25'>25</option>
+                                <option value='35'>35</option>
+                                <option value='40'>40</option>
+                                <option value='50'>50</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-2">
+                            <label>% on Plastic,Rubber, Nylon & Painting materials</label>
+                        </div>
+                        </div>-->
+                    <!--                        <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>Deduct deprecation @ 30% on Fibre</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <label>&#x20B9;<span id="fibre_depreciation_final_private_id"></span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>Deduct deprecation @ 50% on Painting Materials</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <label>&#x20B9;<span id="painting_depreciation_final_private_id"></span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>Deduct deprecation @ 50% on Plastic/ Rubber/ Nylon Parts</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <label>&#x20B9;<span id="rubber_depreciation_final_private_id"></span></label>
+                                                </div>
+                                            </div>-->
+                    <!--                        <div class="imt23" hidden>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>Deduct excess @ <span id="imt23_labour_percentage_final_private_id"></span>% on for the Labour admissible under IMT23</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;<span id="imt23_labour_depreciation_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-xs-2">
+                                                        <label>Deduct excess @ <span id="imt23_parts_percentage_summary_final_private_id"></span>% on for the Labour admissible under IMT23</label>
+                                                    </div>
+                                                    <div class="col-xs-3">
+                                                        <label>&#x20B9;<span id="imt23_parts_depreciation_final_private_id"></span></label>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                    <!--                        <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>Deducted total:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <label>&#x20B9;<span id="depreciation_total_final_private_id"></span></label>
+                                                </div>
+                                            </div>-->
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <label>Deduct Policy Excess</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Compulsory:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="number" value="0" min="0"  id="compulsory_final_private_id" name="compulsory_final_private_id" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Imposed:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="number" value="0" min="0" name="imposed_final_private_id" id="imposed_final_private_id" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Voluntary:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="number" value="0" min="0"  id="voluntary_final_private_id" name="voluntary_final_private_id" style="text-align: right">
+                        </div>
+                    </div>
+                    <!--                        <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>Policy Excess Deduction Total:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <label>&#x20B9;<span id="policy_excess_total_final_private_id"></span></label>
+                                                </div>
+                                            </div>-->
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <label>Deduct Salvage Value:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" type="number" value="0" min="0"  id="salvage_value_final_private_id" name="salvage_value_final_private_id" style="text-align: right">
+                        </div>
+                    </div>
+                    <!--                        <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>Insurers approx.liability:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <label>&#x20B9; <span id="liability_total_final_private_id"></span></label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-2">
+                                                    <label>In Words:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <span id="liability_total_in_words_final_private_id"></span>
+                                                </div>
+                                            </div>-->
+                </fieldset>
+                <fieldset>
+                    <legend>Surveyor Observations</legend>
+                    <div>
+                        <div class="col-xs-10">
+                            <label>(Use alt+shift+c to add new entry)</label>
+                        </div>
+                    </div>
+                    <div class="table_class" id="comments_table_final_private_id"></div>
+                    <input type="button" value="Add New Comment" name="comments_table_final_private_id" onclick="addRow(3)" accesskey="c" hidden>
+                </fieldset>
+                <fieldset>
+                    <legend>Professional Fee:</legend>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Spot Survey/Preliminary Survey:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="spot_survey_charges_final_private_id" name="spot_survey_charges_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Final Survey:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="final_survey_charges_final_private_id"  name="final_survey_charges_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Reinspection:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="reinspection_charges_final_private_id" name="reinspection_charges_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Opinion:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="opinion_charges_final_private_id" name="opinion_charges_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Bill Check:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="check_charges_final_private_id" name="check_charges_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Travelling Expense:</legend>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Local Expense:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="local_travelling_expenses_final_private_id" name="local_travelling_expenses_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Place of Survey Local:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="local_place_of_survey_final_private_id" name="local_place_of_survey_final_private_id" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Total Distance Travelled Local:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="local_distance_travelled_final_private_id" name="local_distance_travelled_final_private_id" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Outstation Expense:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="outstation_travelling_expenses_final_private_id" name="outstation_travelling_expenses_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Place of Survey Outstation:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="outstation_place_of_survey_final_private_id" name="outstation_place_of_survey_final_private_id" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Total Distance Travelled Outstation:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="outstation_distance_travelled_final_private_id" name="outstation_distance_travelled_final_private_id" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Photos:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="input-group">
+                                <input class="form-control" id="number_of_photos_final_private_id" name="number_of_photos_final_private_id" value="0" min="0" type="number">
+                                <label class="input-group-addon">no. @ </label>
+                                <input class="form-control" id="per_photo_price_final_private_id" name="per_photo_price_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                            </div>
+                        </div>
+                        <!--                                <div class="col-xs-3" style="padding-left: 10px;">
+                                                            <label>&#x20B9;</label><span id="total_photo_price_final_private_id"></span>
+                                                        </div>-->
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label> Out Station Allowance:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <input class="form-control" id="outstation_allowance_final_private_id" name="outstation_allowance_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 ">
+                            <label>Miscellaneous - Postage Charges:</label>
+                        </div>
+                        <div class="col-xs-3">
+
+                            <input class="form-control" id="postage_charges_final_private_id" name="postage_charges_final_private_id" type="number" value="0" min="0" style="text-align: right">
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-xs-3">
+
+                            <input class="form-control" id="bill_amount" name="bill_amount" type="hidden" value="0" min="0" style="text-align: right">
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-xs-3">
+
+                            <input class="form-control" id="paid_amount" name="paid_amount" type="hidden" value="0" min="0" style="text-align: right">
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-xs-3">
+
+                            <input class="form-control" id="balance" name="balance" type="hidden" value="0" min="0" style="text-align: right">
+                        </div>
+                        
+                    </div>
+                    <!--                        <div class="row">
+                                                <div class="col-xs-2 ">
+                                                    <label>Total:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <span id="bill_total_final_private_id">&#x20B9;</span>
+                                                </div>
+                                            </div>-->
+                    <!--                        <div class="row">
+                                                <div class="col-xs-2 ">
+                                                    <label>Total in words:</label>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <input type="text" class ="form-control" id="bill_total_in_words_final_private_id">
+                                                </div>
+                                            </div>-->
+                </fieldset>
+                <div class="row">
+                    <div class="col-xs-10 pull-right">
+                    <input class="btn btn-primary" type="button" value="Update Data" id="update" name="final_private_update"
+                               onclick="updateData();" accesskey="u">
+                               
+                        <!--<input class="btn btn-primary" type="button" value="Update Data" name="update"
+                             onclick="updateFinalPrivate();" accesskey="u">-->
+                        <input class="btn btn-primary" type="button" value="Display Data" id="display" name="final_private_load_reinspection" onclick="location.href = 'displaytable.html';" >
+                         <input class="btn btn-primary" type="button" value="Load Reinspection" id="reinspection" name="final_private_reinspection" onclick="myFunction();" disabled="disabled">
+                         <input class="btn btn-primary" type="button" value="Top" id="myBtn"   onclick="topFunction()">
+                         <span id="message" style="color:red;"></span>
+
+                        
+                        <!---<input class="btn btn-primary" type="button" value="Load Reinspection" name="final_private_load_reinspection" onclick="loadReinspection()">
+                        <input class="btn btn-primary" type="button" value="Print Preview" name="final_private_print_preview" onclick="window.open('pr
+                        intpreview.html', '_blank', 'menubar=no, toolbar=no, status=no, scrollbars=yes')">
+                        <input class="btn btn-primary" type="button" value="Bill Print"  name="final_private_bill_print"onclick="window.open('billprintpreview.html', '_blank', 'menubar=no, toolbar=no, status=no, scrollbars=yes')">-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">
+                    </div>
+                    <div class="col-xs-3">
+                        <h4 id="message" class="alert-info"></h4>
+                    </div>
+                </div>
+            </form>
+
+            
+        </article>
+        
+    </body>
+
+    <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/bootstrap-timepicker.min.js"></script>
+         <script src="js\pouchdb-6.1.2.min.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/serial.js"></script>
+        <script src="js/finalprivate/tableprivate.js"></script>
+        <script src="js/finalprivate/finalprivate.js"></script>
+        <script src="js/finalprivate/finalprivatedb.js"></script>
+
+       
+       <script>
+       // window.onload = updateFinalPrivate();
+           // var _id;   
+          newPrivateSurvey();
+          $(function(){
+    $("#cc_error_msg").hide();
+    $("#pn_error_msg").hide();
+    $("#cn_error_msg").hide();
+    $("#ic_error_msg").hide();
+    $("#en_error_msg").hide(); 
+    $("#pc_error_msg").hide(); 
+    $("#c1_error_msg").hide(); 
+//$("#dc_error_msg").hide(); 
+    $("#dr_error_msg").hide(); 
+    
+    var error_company_code=false;
+    var error_policy_no=false;
+    var error_policy_code=false;
+    var error_claim_no=false;
+     var error_claim_code=false;
+    var error_insurer_code=false;
+    var error_endorsement_no=false;
+    var error_registration_no=false; 
+    //var error_policy_no=true;
+   //var error_drivers_liscense_no=false;   
+   var error_drivers_permit_no=false;   
+    
+    $("#company_code_final_private_id").focusout(function(){
+        check_company_code();
+        
+    });
+    
+    $("#policy_number_code_final_private_id").focusout(function(){
+        check_policy_code();
+        
+    });
+    //$("#policy_number_final_private_id").focusout(function(){
+       // check_policy_no();
+        
+   // });
+    
+    
+    $("#claim_number_code_final_private_id").focusout(function(){
+        check_claim_code();
+        
+    });
+   // $("#claim_number_final_private_id").focusout(function(){
+       // check_claim_no();
+        
+    //});
+    
+    $("#insurer_code_final_private_id").focusout(function(){
+        check_insurer_code();
+        
+    });
+    
+    $("#insurance_endorsement_final_private_id").focusout(function(){
+        check_endorsement_no();
+        
+    });
+    
+    //$("#form_business").focusout(function(){
+    //    check_drivers_liscense_no();
+        
+    //});
+    $("#vehicle_registerd_number_final_private_id").focusout(function(){
+        check_registration_no();
+        
+    });
+});
+
+        // Edit(_id);
+//var idParameter = getUrlParameters("_id", "", true);
+ 
+/*var n=Object.keys(doc.comments_table).length;
+    for(var m=0;m<n;i++)
+     {  
+     
+    for(var keyc in doc.comments_table){
+       addRow(3);
+           var valc=doc.comments_table[keyc];
+
+            //document.getElementById("vehicle_permitted["+key+"][sl_no]")[m].value=key;
+            document.getElementsByName("comments_table["+keyc+"][comments]")[m].value=valc.comments;
+           // document.getElementsByName("comments_table["+keys+"][time]")[m].value=vals.time;
+            
+
+           
+        }
+ }*/
+
+/*var docrec = new Object();
+  docrec=$('#form_final_private_id').serializeObject();
+// console.log(final_private_details._rev=doc._rev);
+ docrec._id=doc._id;
+ docrec._rev=doc._rev;
+
+
+  db.put(docrec, function callback(error, response){
+    //console.log(docrec);
+      if (!error) {
+        console.log("updated");
+        return true;
+      }else{
+        console.log("not updated",error);
+        return false;
+      }
+    });*/
+//}
+//});
+               //var data = $('#form_final_private_id').serializeObject();
+           // };</script>
+           <script src="js/script.js"></script>
+           <script>
+          /* var url = window.location.href;
+  //console.log(url);
+       // var aValue = localStorage.getItem("final_private");
+       
+var a = url.split("_id=")[1];
+//a = a != undefined ? a : url.split("finalprivateupdate.html/")[1];
+//var b = a.split("&")[0];
+ //var idParameter= url.substring(url.lastIndexOf('#') + 1);;
+        db.get(a,function(err,doc){
+          //console.log(a);
+       //console.log(doc);
+    if(!err){
+           var n=Object.keys(doc.comments_table).length;
+    for(var m=0;m<1;m++)
+     {  
+     //n-2
+    for(var keyc in doc.comments_table){
+       addRow(3);
+           var valc=doc.comments_table[keyc];
+
+            //document.getElementById("vehicle_permitted["+key+"][sl_no]")[m].value=key;
+            document.getElementsByName("comments_table["+keyc+"][comments]")[m].value=valc.comments;
+           // document.getElementsByName("comments_table["+keys+"][time]")[m].value=vals.time;
+            
+
+           
+    }
+ }
+}
+});*/
+
+           </script>
+        <script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                $('#report_date_final_private_id').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+                 $('#insurance_period_from_final_private_id').datepicker({
+                    format: "dd/mm/yyyy"
+                }).on('input change', function () {
+                    var from = $('#insurance_period_from_final_private_id').datepicker('getDate');
+                    from.setDate(from.getDate() + 364);
+                    $('#insurance_period_to_final_private_id').datepicker('setDate', from);
+                });
+
+                $('#insurance_period_to_final_private_id').datepicker({
+                    format: "dd/mm/yyyy",
+                   }).on('input change', function () {
+               
+             
+                        var d1= $('#insurance_period_to_final_private_id').datepicker('getDate');
+                       var  d2= $('#insurance_period_from_final_private_id').datepicker('getDate');
+                         if (d1 < d2) {
+                            
+                          var from = $('#insurance_period_from_final_private_id').datepicker('getDate');
+                              from.setDate(from.getDate() + 364);
+                    $('#insurance_period_to_final_private_id').datepicker('setDate', from); 
+                    
+                           }
+                });
+                $('#vehicle_registration_date_final_private_id').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+
+                $('#road_tax_date_final_private_id').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+
+                $('#dl_issue_date_final_private_id').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+                $('body').on('focus', '.license_effective_date_class', function () {
+                    $(this).datepicker({
+                        format: "dd/mm/yyyy"
+                    });
+                });
+                $('body').on('focus', '.license_validity_date_class', function () {
+                    $(this).datepicker({
+                        format: "dd/mm/yyyy"
+                    });
+                });
+
+                $('body').on('focus', '.survey_date_class', function () {
+                    $(this).datepicker({
+                        format: "dd/mm/yyyy"
+                    });
+                });
+
+                $('body').on('focus', '.survey_time_class', function () {
+                    $(this).timepicker({showMeridian: false});
+                });
+
+                //$("#accident_time_final_private_id").timepicker({showMeridian: false});
+
+                $('#accident_date_final_private_id').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+                $('#vehicle_rc_validity_final_private_id').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+                $('#survey_request_date_final_private_id').datepicker({
+                    format: "dd/mm/yyyy"
+                });
+            });
+        </script>
+        <script type="text/javascript">
+        function myFunction(){
+
+        $(document).ready(function() {
+       var term = $('#report_number_final_private_id').val();
+       window.location.href = 'reinspect.html?_id=' +term;
+
+      //$('#reinspection').append("'location.href'= 'reinspection.html?_id'+term+;");
+        
+     });
+    }
+  
+        </script>
+
+
+        <script type="text/javascript">
+        
+function topFunction() {
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera 
+    document.documentElement.scrollTop = 0; // For IE and Firefox
+}
+         
+           /* function loadReinspection() {
+             var repnum = document.getElementById("report_number_final_private_id").value;
+                                window.location.href = "reinspection.html";
+
+
+                sessionStorage.setItem('reportKey', repnum);
+
+            };
+            document.getElementById('report_date_final_private_id').value = Date();*/
+
+        </script>
+<script>
+        $(function(){
+    $("#not_nil, #nil").change(function(){
+        
+        if($("#not_nil").is(":checked")){
+            $('#metal_percentage_final_private_id,#fibre_percentage_final_private_id,#plastic_percentage_final_private_id').attr("disabled", false);
+        }
+        else if($("#nil").is(":checked")){
+            $('#metal_percentage_final_private_id,#fibre_percentage_final_private_id,#plastic_percentage_final_private_id').attr("disabled", true);
+        }
+    });
+});
+    
+
+
+
+        </script>
+        
+
+
+
+</html>
+
+<!--TODO LIST
+hour is shown in 24 if pc timing is in 24 hours store in hh:mm am/pm
+toLocaleDateString('en-GB')
+do not clear browser data
+child parts from parent
+quantity in annexure a
+third party deprecation is 0%
+
+once 9999 number reset
+
+third party flag
+final private and commercial
+time
+
+
+add insurance company data from here itself
+-->
+

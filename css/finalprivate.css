@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 4 Feb, 2016, 12:21:21 PM
+    Author     : farhan
+*/
+
+/*farhans stuff*/
+/*div.* takes precedence over other classes applied to it*/
+
+textarea.textarea_class {
+
+    resize: none;
+    overflow-y: auto;
+
+}
+
+div.table_class {
+
+    display: table;
+
+}
+
+div.table_row_class {
+
+    display: table-row;
+
+}
+
+div.table_cell_class {
+
+    display: table-cell;
+    padding: 5px;
+    border:#000000 1px solid;
+
+}
+
+div.imt23 {
+
+    display: none;
+
+}
+
+#fabricated_body {
+
+    display: none;
+
+}
+
+#labour_service_tax {
+
+    display: none;
+
+}
+
+/*#parts_reason_column*/
+#reason_column_0, #reason_column_1, #reason_column_2, #reason_column_3, #reason_column_4 { 
+
+    display: none;
+
+}
+
+/*farhans stuff ends here*/
+
+/*insurance page css*/
+body {
+    
+  font-family:sans-serif;
+  
+}
+
+table td, table th {
+    
+  padding:5px;
+  
+}

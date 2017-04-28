@@ -1,0 +1,20 @@
+var db=new PouchDB('Personal_Details');
+db.get("0001",function(err,doc){
+  if(!err){
+document.getElementById("name_personal_id").value=doc.personal_name;
+      document.getElementById("designation_personal_id").value=doc.personal_designation;
+      document.getElementById("address_personal_id").value=doc.personal_address;
+     document.getElementById("office_phone_personal_id").value=doc.personal_office_phone;
+    document.getElementById("home_phone_personal_id").value=doc.personal_home_phone;
+    document.getElementById("mobile_phone_personal_id").value=doc.personal_mobile;
+    document.getElementById("email_personal_id").value=doc.personal_email;
+    document.getElementById("license_number_personal_id").value=doc.personal_license_number;
+    document.getElementById("license_validity_personal_id").value=doc.personal_license_validity;
+    document.getElementById("pan_personal_id").value=doc.personal_pan;
+    document.getElementById("bank_name_personal_id").value=doc.personal_bank_name;
+    document.getElementById("bank_branch_personal_id").value=doc.personal_bank_branch;
+    document.getElementById("ifs_code_personal_id").value=doc.personal_ifs_code;
+    document.getElementById("micr_personal_id").value=doc.personal_micr;
+    document.getElementById("account_number_personal_id").value=doc.personal_account_number;
+  }
+});

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Insurance:List of Insurance Companies</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/finalprivate.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/datatables.min.css"/>
+        
+    </head>
+    <body background="images/lbbackground.jpg" >
+        <nav id="myNavbar" class="navbar navbar-default navbar-inverse " role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<a class="navbar-brand" href="index.html">HOME</a>-->
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Survey
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown dropdown-submenu">
+                                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Final Survey</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="active ">
+                                            <a href="displaytable.html">Private</a>
+                                        </li>
+                                        <li >
+                                            <a href="commercialtable.html">Commercial</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu">
+                                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Spot Survey</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="displayspotTable.html">Private</a>
+                                        </li>
+                                        <li >
+                                            <a href="displayspotcommercial.html">Commercial</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown ">
+                                    <a  href="displayreinspection.html">Re-inspection</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="reporthistory.html">Report History</a></li>
+                        <li><a href="company.html">Insurance Companies</a></li>
+                        <li><a href="personal.html">Personal Details</a></li>
+                        <li><a href="accounts.html">Accounts</a></li>
+                        <li><a  href="#" onclick="logout()">Logout</a></li>
+                        <li><a  href="settings.html">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <article class="container" id="boxshadow" style="background-color:white; padding-top: 10px;">
+            <form name="company_details" id="company_details">
+                <fieldset>
+                    <legend >Insurance Company Details</legend>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Branch</th>
+                                <th>Address</th>
+                                <th>Office Number</th>
+                                <th>Email Id</th>
+                                <th>Code</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                               
+                                <td><input class="form-control" type="text" id="name-field" name="company_name"></td>
+                                <td><input class="form-control" type="text" id="branch-field" name="company_branch"></td>
+                                <td><input class="form-control" type="text" id="address-field" name="company_address"></td>
+                                <td><input class="form-control" type="text" id="officeNumber-field" name="company_office_number"></td>
+                                <td><input class="form-control" type="text" id="email-field" name="company_email"></td>
+                                <td><input class="form-control" type="text" id="code-field" maxlength="6" name="company_code" /></td>
+                                <td><input class="btn btn-primary" type="button" value="Add"  name="add" onclick="addInsuranceCompany()"></td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <fieldset style="padding-top: 10px;">
+                    <legend >Insurance Companies</legend>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-bordered" id="example">
+                            <thead>
+                                <tr>
+                                  <th>Sl_No</th>
+                                    <th>Name</th>
+                                    <th>Branch</th>
+                                    <th>Address</th>
+                                    <th>Office Number</th>
+                                    <th>Email</th>
+                                    <th>Code</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody id="company_table"></tbody>
+                        </table>
+                    </div>
+                </fieldset>
+            </form>
+        </article>
+    </body>
+    <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js\pouchdb-6.1.2.min.js"></script>
+        <script src="js/serial.js"></script>
+        <script src="js/companydb.js"></script>
+         <script src="js/datatables.min.js"></script>
+        
+        
+        <script type="text/javascript">
+           // window.onload = function () {
+            //    loadInsuranceCompany();
+           // };
+           //var db=new PouchDB('companyDetails');
+            showDetails();
+        </script>
+        <script>
+            var nameArray = document.cookie.split("=");
+            name = nameArray[1];
+            if (Boolean(name) === false)
+            {
+                window.location.href = "index.html";
+            }
+
+        </script>
+</html>

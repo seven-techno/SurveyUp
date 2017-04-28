@@ -1,0 +1,1010 @@
+﻿<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Final Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/printpreview.css">
+        <link rel="stylesheet" type="text/css" media="print" href="css/print.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">      
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>        
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/converttowords.js" type="text/javascript"></script>
+        <script src="js/reinspection/printreinspectiondb.js" type="text/javascript"></script>
+    </head>
+    <body class="print_body_class" >  
+        <!--        <article>
+                    <section id="bill_header_print_id" class="page_header_print_class">
+                        <div id="page_header_bill_print_id"></div>
+                        <div class="clear_class"></div>
+                        <hr class="horizontal_line_class">
+                    </section>
+                    <section id="bill_details_print_id">
+                        <center><b>BILL CUM ADVANCED RECEIPT</b></center><br>
+                        <span class="alignleft_class"><label class="label_class">Report No:<span id="report_number_bill_print_id"></span></label></span>
+                        <span class="alignright_class"><label class="label_class">Date:<span id="report_date_bill_print_id"></span></label></span>
+                        <div class="clear_class"></div>
+                        <br>
+                        <p>
+                            To,<br>
+                            <span id="manager_of_insurance_company_bill_print_id"></span><br>
+                            <span id="name_of_insurance_company_bill_print_id"></span><br>
+                            <span id="address_of_insurance_company_bill_print_id"></span><br>
+                        </p>
+                        <label class="label_class">To professional charges for Survey of</label><span class="aligncentre_class">:<span id="vehicle_make_and_model_bill_print_id"></span></span><br>
+                        <div class="clear_class"></div>
+                        <label class="label_class">Bearing Regn No.</label><span class="aligncentre_class">:<span id="vehicle_registration_number_bill_print_id"></span><b></b></span><br>
+                        <label class="label_class">Insured</label><span class="aligncentre_class">:<span id="name_of_insured_bill_print_id"></span></span><br>
+                        <span class="aligncentre_class"> <span id="address_of_insured_bill_print_id"></span></span><br>
+                        <div class="clear_class"></div>
+                        <label class="label_class">Policy No.</label><span class="aligncentre_class">:<span id="policy_number_bill_print_id"></span></span><br>
+                        <label class="label_class">Claim No.</label><span class="aligncentre_class">:<span id="claim_number_bill_print_id"></span></span><br>
+                        <div class="clear_class"></div>
+                        <label class="label_class"><u>Particulars</u></label><u class="aligncentre_class">Amount</u><br>
+                        <label class="label_class">Professional fee</label><br>
+                        <label class="label_class">a. Spot Survey/ Preliminary</label><span class="aligncentre_class">:Rs. <span id="spot_survey_bill_print_id"></span></span><br>
+                        <label class="label_class">b. Final Survey</label><span class="aligncentre_class">:Rs. <span id="final_survey_bill_print_id"></span></span><br>
+                        <label class="label_class">c. Reinspection</label><span class="aligncentre_class">:Rs. <span id="reinspection_bill_print_id"></span></span><br>
+                        <label class="label_class">d. Opinion</label><span class="aligncentre_class">:Rs. <span id="opinion_bill_print_id"></span></span><br>
+                        <label class="label_class">e. Bill Check</label><span class="aligncentre_class">:Rs. <span id="check_bill_print_id"></span></span><br>
+                        <div class="clear_class"></div>
+                        <label class="label_class">Travelling Expenses</label><br>
+                        <label class="label_class">a. Local</label><span class="aligncentre_class">:Rs. <span id="local_expense_bill_print_id"></span></span><br>
+                        <label class="label_class">Place of Survey</label><span class="aligncentre_class">:<span id="local_location_bill_print_id"></span></span><br>
+                        <label class="label_class">Total Distance Travelled</label><span class="aligncentre_class">:<span id="local_distance_bill_print_id"></span></span><br>
+                        <label class="label_class">b. Outstation</label><span class="aligncentre_class">:Rs. <span id="outstation_expense_bill_print_id"></span></span><br>
+                        <label class="label_class">Place of Survey</label><span class="aligncentre_class">:<span id="outstation_location_bill_print_id"></span></span><br>
+                        <label class="label_class">Total Distance Travelled</label><span class="aligncentre_class">:<span id="outstation_distance_bill_print_id"></span></span><br>                
+                        <br>
+                        <label class="label_class">Photos</label> <span id="number_of_photos_bill_print_id"></span> @ Rs. <span id="rate_per_photo_bill_print_id"></span> <span class="aligncentre_class">:Rs. <span id="photos_bill_print_id"></span></span><br>                
+                        <label class="label_class">Outstation allowance</label><span class="aligncentre_class">:Rs. <span id="outstation_bill_print_id"></span></span><br>
+                        <label class="label_class">Miscellaneous - Postage charges</label><span class="aligncentre_class">:Rs. <span id="miscellaneous_bill_print_id"></span></span><br>
+                        <div class="clear_class"></div>
+                        <label class="label_class"><b>Total</b></label><span class="aligncentre_class">:<b>Rs. <span id="total_bill_print_id"></span></b></span><br>                
+                        <label>In Words <span id="total_bill_in_words_print_id"></span></label><br>
+                        <div class="clear_class"></div>
+                        <hr class="horizontal_line_class">
+                    </section>
+                    <section id="signature_bill_print_id">
+                        <div id="page_signature_bill_print_id"></div>
+                        <div class="clear_class"></div>
+                    </section>
+                    <section id="footer_bill_print_id">
+                        <div id="page_footer_bill_print_id"></div>
+                        <div class="clear_class"></div>
+                    </section>            
+                </article>
+                <div class="page_break"></div>-->
+        <article >
+            <section id="page_header_section_print_id" class="page_header_print_class">
+                <div id="page_header_print_id"></div>
+                <div class="clear_class"></div>
+            </section>
+            <section id="motor_details_print_id">
+                <!--<hr class="horizontal_line_class">-->
+                <center><b>RE-INSPECTION REPORT<br>
+                        <!--<span id="report_mode_print_id"></span>--> 
+                        Private & Confidential</b></center><br>
+                <span class="alignleft_class"><label class="label_class">Report No:</label><span id="report_number_print_id"></span></span>
+                <span class="alignright_class"><label class="label_class">Date:</label><span id="report_date_print_id"></span></span>
+                <div class="clear_class"></div>
+                <br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;This report is issued without prejudice, in respect of cause, nature and extent of loss/ damage & subject to the terms and conditions of the Insurance Policy 
+                    and Insurer admitting liability.</p>
+                <label class="label_class">Policy No.</label><span class="aligncentre_class">:<b><span id="policy_number_print_id"></span></b></span><br>
+                <label class="label_class">Claim No.</label><span class="aligncentre_class">:<span id="claim_number_print_id"></span></span>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section>
+                To,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="manager_of_insurance_company_print_id"></span>,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="name_of_insurance_company_print_id"></span><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<span id="address_of_insurance_company_print_id"></span><br>                
+            </section>
+            <section id="insurance_particulars_print_id">
+                <label class="label_class"><b><u>Insurance Particulars</u></b></label><br>
+                <label class="label_class">Insurer</label>
+                <span class="aligncentre_class">:<span id="insurer_company_name_print_id"></span></span><br>
+                <span class="aligncentre_class"> <span id="insurer_company_address_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Insured</label>
+                <span class="aligncentre_class">:<b><span id="insured_name_print_id"></span></b></span><br>
+                <span class="aligncentre_class"> <span id="insured_address_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Period of Insurance</label><span class="aligncentre_class">:<span id="period_of_insurance_from_print_id"></span> to <span id="period_of_insurance_to_print_id"></span></span><br>
+                <label class="label_class">Endorsement No.</label><span class="aligncentre_class">:<span id="insured_endorsement_print_id"></span></span><br>
+                <label class="label_class">Sum Insured</label><span class="aligncentre_class">:Rs. <span id="insured_sum_insured_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">H.P.A/ H.Y.P with</label><span class="aligncentre_class">:<span id="hpa_hyp_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="vehicle_particulars_print_id">
+                <label class="label_class"><b><u>Vehicle Particulars</u></b></label><br>
+                <label class="label_class">R.C. Verified</label><span class="aligncentre_class">:<span id="vehicle_rc_verified_print_id"></span></span><br>
+                <label class="label_class">Date of Registration</label><span class="aligncentre_class">:<span id="vehicle_registration_date_print_id"></span></span><br>
+                <label class="label_class">Registration No.</label><span class="aligncentre_class">:<b><span id="vehicle_registration_number_print_id"></span></b></span><br>
+                <label class="label_class">Make</label><span class="aligncentre_class">:<span id="vehicle_make_print_id"></span></span><br>
+                <label class="label_class">Model</label><span class="aligncentre_class">:<span id="vehicle_model_print_id"></span></span><br>
+                <label class="label_class">Chassis No.</label><span class="aligncentre_class">:<span id="vehicle_chassis_number_print_id"></span></span><br>
+                <label class="label_class">Engine No.</label><span class="aligncentre_class">:<span id="vehicle_engine_number_print_id"></span></span><br>
+                <label class="label_class">Color</label><span class="aligncentre_class">:<span id="vehicle_colour_print_id"></span></span><br>
+                <label class="label_class">Tax paid</label><span class="aligncentre_class">:<span id="vehicle_tax_paid_print_id"></span></span><br>
+                <label class="label_class">Class of Vehicle</label><span class="aligncentre_class">:<span id="vehicle_class_print_id"></span></span><br>
+                <label class="label_class">Pre-Accident Condition</label><span class="aligncentre_class">:<span id="vehicle_condition_print_id"></span></span><br>               
+                <label class="label_class">Odometer Reader</label><span class="aligncentre_class">:<span id="vehicle_odometer_reading_print_id"></span> Kms</span><br>
+                <label class="label_class">Type of Body</label><span class="aligncentre_class">:<span id="vehicle_body_print_id"></span></span><br>
+                <label class="label_class">RC Validity</label><span class="aligncentre_class">:<span id="vehicle_rc_validity_print_id"></span></span><br>
+                <div class="imt23_class" hidden>
+                    <label class="label_class">Unladen Weight</label><span class="aligncentre_class">:<span id="vehicle_unladen_weight_print_id"></span></span><br>
+                    <label class="label_class">Regd. Laden weight</label><span class="aligncentre_class">:<span id="vehicle_registered_laden_print_id"></span></span><br>
+                    <label class="label_class">Fitness Certificate No</label><span class="aligncentre_class">:<span id="vehicle_fitness_certificate_print_id"></span></span><br>
+                    <label class="label_class">Fitness Certificate Validity</label><span class="aligncentre_class">:<span id="vehicle_fitness_certificate_validity_print_id"></span></span><br>
+                    <label class="label_class">Seating Capacity</label><span class="aligncentre_class">:<span id="vehicle_seating_capacity_print_id"></span></span><br>
+                </div>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>            
+            <section id="permit_particualrs_print_id" class="imt23_class" hidden>
+                <label class="label_class"><b><u>Permit Particulars</u></b></label><br>
+                <label class="label_class">Permit No.</label><span class="aligncentre_class">:<span id="permit_number_print_id"></span></span><br>
+                <label class="label_class">Validity</label><span class="aligncentre_class">:<span id="permit_validity_print_id"></span></span><br>
+                <label class="label_class">Type of Permit</label><span class="aligncentre_class">:<span id="permit_type_print_id"></span></span><br>
+                <label class="label_class">Passenger/ Load Carrying Capacity</label><span class="aligncentre_class">:<span id="permit_load_passenger_capacity_print_id"></span></span><br>
+                <label class="label_class">Route/ Area in which permitted to Ply</label><span class="aligncentre_class">:<span id="permit_route_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="driver_particulars_print_id">
+                <label class="label_class"><b><u>Driver Particulars</u></b></label><br>
+                <label class="label_class">D.L. Verified</label><span class="aligncentre_class">:<span id="dl_verified_print_id"></span></span><br>
+                <label class="label_class">Driver's Details</label><span class="aligncentre_class">:<span id="driver_name_print_id"></span></span><br>
+                <span class="aligncentre_class"> <span id="driver_address_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Driver's License No.</label><span class="aligncentre_class">:<span id="driver_license_number_print_id"></span></span><br>
+                <label class="label_class">Date of Issue</label><span class="aligncentre_class">:<span id="driver_license_date_of_issue_print_id"></span></span><br>
+                <!--<label class="label_class">Vehicles Permitted to Drive</label><span class="aligncentre_class">:<span id="driver_vehicles_permitted_print_id"></span></span><br>-->
+                <div class="table_class" id="vehicle_table_print_id">
+                    <div class="table_row_class">
+                        <div class="table_cell_class">Sl</div>
+                        <div class="table_cell_class">Vehicle Type</div>
+                        <div class="table_cell_class">Date of Issue</div>
+                        <div class="table_cell_class">Date of Expiry</div>
+                        <div class="table_cell_class">Badge</div>
+                    </div>
+                </div>
+                <label class="label_class">Issuing Authority</label><span class="aligncentre_class">:<span id="driver_license_issuing_authority_print_id"></span></span><br>
+                <label class="label_class">Type of License</label><span class="aligncentre_class">:<span id="driver_license_type_print_id"></span></span><br>
+                <label class="label_class">Endorsement if Any</label><span class="aligncentre_class">:<span id="driver_license_endorsement_print_id"></span></span><br>                
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="trip_sheet_print_id" class="imt23_class" hidden>
+                <label class="label_class"><b><u>Details of Load/ Trip Sheet</u></b></label><br>
+                <label class="label_class">Nature of Goods Carried</label><span class="aligncentre_class">:<span id="nature_of_goods_carried_print_id"></span></span><br>
+                <label class="label_class">weight of goods</label><span class="aligncentre_class">:<span id="weight_of_goods_print_id"></span></span><br>
+                <label class="label_class">No. of Passengers Carried</label><span class="aligncentre_class">:<span id="passengers_carried_print_id"></span></span><br>
+                <label class="label_class">Transported from</label><span class="aligncentre_class">:<span id="transported_from_print_id"></span></span><br> 
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>        
+            <section id="accident_particulars_print_id">
+                <label class="label_class"><b><u>Accident Particulars</u></b></label><br>
+                <label class="label_class">Date</label><span class="aligncentre_class">:<span id="date_of_accident_print_id"></span></span><br>
+                <label class="label_class">Time</label><span class="aligncentre_class">:<span id="time_of_accident_print_id"></span></span><br>
+                <label class="label_class">Place</label><span class="aligncentre_class">:<span id="place_of_accident_print_id"></span></span><br>
+                <label class="label_class">Cause of Accident/ Damage</label><span class="aligncentre_class">:<span id="cause_of_accident_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <label class="label_class">Details of T.P Property Damage</label><span class="aligncentre_class">:<span id="details_of_damage_print_id"></span></span><br>
+                <label class="label_class">Details of Injuries</label><span class="aligncentre_class">:<span id="details_of_injuries_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="police_report_print_id">
+                <label class="label_class"><b><u>Police Report</u></b></label><br>
+                <label class="label_class">Accident has been reported to police</label><span class="aligncentre_class">:<span id="accident_reported_print_id"></span></span><br>
+                <label class="label_class">Name of police station</label><span class="aligncentre_class">:<span id="name_of_police_station_print_id"></span></span><br>
+                <label class="label_class">F.I.R details</label><span class="aligncentre_class">:<span id="fir_details_print_id"></span></span><br>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="declaration_details_print_id">
+                <p>Acting upon instruction from <span id="insurance_company_address_declaration_print_id"></span>, I the undersigned Surveyor & Loss Assessor, 
+                    visited at the workshop of <span id="place_of_survey_declaration_print_id"></span> on <span id="date_of_survey_declaration_print_id"></span>, inspected the subject vehicle in its accidental condition, 
+                    noted the external visible damage and instructed the repairer to dismantle the vehicle for the inspection 
+                    of internal & hidden damage. Then the damage to internal components were inspected after dismantling.<br>
+                    After a thorough inspection of the vehicle and discussion with the repairer, the Assesment reads as follows in annexture A</p>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="survey_details_print_id">
+                <label class="label_class"><b><u>Survey Details</u></b></label><br>
+                <label class="label_class">Date of request for Survey</label><span class="aligncentre_class">:<span id="survey_date_request_print_id"></span></span>
+                <div class="table_class" id="survey_table_print_id">
+                    <div class="table_row_class">
+                        <!--                        <div class="table_cell_class">Sl.</div>
+                                                <div class="table_cell_class">Date</div>
+                                                <div class="table_cell_class">Time</div>-->
+                    </div>
+                </div>
+                <label class="label_class">Place of Survey</label><span class="aligncentre_class">:<span id="place_of_survey_print_id"></span></span>
+                <div class="clear_class"></div>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <section id="signature_page_print_id">
+                <div id="page_signature_print_id"></div>
+                <div class="clear_class"></div>                
+            </section>
+        </article>
+        <div class="page_break"></div>       
+        <section id="annexure_header_print_id">                
+            <div id="page_header_annexure_print_id"></div>
+            <span class="alignleft_class"><label class="label_class">Report No:  </label><span id="report_number_annexure_header_print_id"></span></span>
+                <span class="alignright_class"><label class="label_class">Date:  </label><span id="report_date_annexure_print_id"></span></span>
+            <div class="clear_class"></div>
+        </section>
+        <article id="annexure_a_print_id">
+            <section id="annexure_a_header_print_id">
+                <center><b>DETAILS OF RE-INSPECTION</b><br>
+                    <!--<span id="report_mode_annexure_print_id">-->
+                    Report No.<span id="report_number_annexure_print_id"></span></center>
+                <!--<hr class="horizontal_line_class">-->
+            </section>
+            <div class="table_class" id="parts_header_table_print_id">
+                <div class="table_row_class">
+                    <div class="table_parts_serial_cell_class">Sl. No.</div>
+                    <div class="table_parts_cell_class">Part Name/ Description</div>
+                    <div class="table_parts_cell_class">Nature of Damage/ Remark</div>
+                </div>
+            </div>
+            <div class="table_class" id="reinspection_table_print_id"></div>
+            <!--for fabricated body-->
+            <!--            <section id="fabricated_first_section_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b><span id="fabricated_first_label_print_id"></span></b></label><br>
+                            <div class="table_class" id="fabricated_first_table_print_id">
+                            </div>
+                            <div class="table_class" id="fabricated_first_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_first_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_first_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_first_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_first_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_first_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_first_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="fabricated_second_section_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b><span id="fabricated_second_label_print_id"></span></b></label><br>
+                            <div class="table_class" id="fabricated_second_table_print_id">
+                            </div>
+                            <div class="table_class" id="fabricated_second_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_second_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_second_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_second_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_second_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_second_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_second_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="fabricated_third_section_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b><span id="fabricated_third_label_print_id"></span></b></label><br>
+                            <div class="table_class" id="fabricated_third_table_print_id">
+                            </div>
+                            <div class="table_class" id="fabricated_third_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_third_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_third_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_third_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_third_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_third_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_third_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="fabricated_fourth_section_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b><span id="fabricated_fourth_label_print_id"></span></b></label><br>                
+                            <div class="table_class" id="fabricated_fourth_table_print_id">
+                            </div>
+                            <div class="table_class" id="fabricated_fourth_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fourth_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fourth_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fourth_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fourth_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fourth_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fourth_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="fabricated_fifth_section_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b><span id="fabricated_fifth_label_print_id"></span></b></label><br>                
+                            <div class="table_class" id="fabricated_fifth_table_print_id">
+                            </div>
+                            <div class="table_class" id="fabricated_fifth_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fifth_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fifth_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fifth_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fifth_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fifth_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fabricated_fifth_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>-->
+            <!--            <section id="fibre_details_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b>Fibre</b></label><br>
+                            <div class="table_class" id="fibre_table_print_id"></div>
+                            <div class="table_class" id="fibre_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fibre_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fibre_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fibre_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fibre_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fibre_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="fibre_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>                    
+                        </section>
+                        <section id="glass_details_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b>Glass</b></label><br>
+                            <div class="table_class" id="glass_table_print_id"></div>
+                            <div class="table_class" id="glass_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="glass_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="glass_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="glass_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="glass_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="glass_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="glass_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="metal_details_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b>Metal</b></label><br>
+                            <div class="table_class" id="metal_table_print_id"></div>
+                            <div class="table_class" id="metal_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="metal_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="metal_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="metal_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="metal_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="metal_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="metal_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="rubber_details_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b>Plastic/ Rubber/ Nylon</b></label><br>
+                            <div class="table_class" id="rubber_table_print_id"></div>
+                            <div class="table_class" id="rubber_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="rubber_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="rubber_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="rubber_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="rubber_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="rubber_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="rubber_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>-->
+            <!--            <section id="deleted_details_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b>Deleted</b></label><br>
+                            <div class="table_class" id="deleted_table_print_id"></div>
+                            <div class="table_class" id="deleted_final_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="deleted_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="deleted_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="deleted_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="deleted_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="deleted_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="deleted_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                        </section>-->
+            <!--<div class="clear_class"></div>-->
+            <!--<hr class="horizontal_line_class">-->
+            <!--            <section id="labour_details_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b>Labour & Repair Charges</b></label><br>
+                            <div class="table_class" id="labour_table_print_id"></div>
+                            <div id="service_tax_print_id" hidden>
+                                <div class="table_class" id="labour_final_table_print_id">
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Total</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_claimed_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_assessed_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Service Tax @ 14%</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_claimed_service_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_assessed_service_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Swach Bharath Cess @ 0.5%</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_claimed_swach_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_assessed_swach_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Krishi Kalyan Cess @ 0.5%</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_claimed_krishi_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_assessed_krishi_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>                  
+                                </div>
+                            </div>-->
+            <!--                <div class="table_class" id="labour_grand_table_print_id">
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="labour_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>
+                            <div class="clear_class"></div>
+                        </section>-->
+            <!--<hr class="horizontal_line_class">-->
+            <!--            <section id="painting_details_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b>Painting</b></label><br>
+                            <div class="table_class" id="painting_table_print_id"></div> 
+                            <div id="regular_print_id" hidden>
+                                <div class="table_class" id="regular_paint_final_table_print_id">
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Grand Total</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_claimed_total_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_assessed_total_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div id="regular_with_tax_print_id" hidden>
+                                <div class="table_class" id="regular_with_tax_paint_final_table_print_id">
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Total</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_claimed_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_assessed_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Service Tax @ 14%</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_claimed_service_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_assessed_service_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Swach Bharath Cess @0.5%</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_claimed_swach_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_assessed_swach_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Krishi Kalyan Cess @0.5%</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_claimed_krishi_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_assessed_krishi_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Grand Total</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_claimed_tax_total_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="regular_assessed_tax_total_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                </div>
+                            </div>               
+                            <div id="75_25_print_id" hidden>
+                                <div class="table_class" id="75_25_paint_final_table_print_id">
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">25% of Material</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_material_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_material_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">75% of Labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_labour_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_labour_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Grand Total</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_total_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_total_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                </div>
+                            </div>                             
+                            <div id="75_25_with_tax_print_id" hidden>
+                                <div class="table_class" id="75_25_paint_tax_final_table_print_id">
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">25% of Material</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_material_tax_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_material_tax_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Vat @ 14.5% on 25% of Material</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_vat_material_tax_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_vat_material_tax_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">75% of Labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_labour_tax_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_labour_tax_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Service Tax @ 14% on 75% of Labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_service_labour_tax_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_service_labour_tax_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Swach Bharath Cess @ 0.5% on 75% of Labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_swach_labour_tax_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_swach_labour_tax_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Krishi Kalyan Cess @ 0.5% on 75% of Labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_krishi_labour_tax_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_krishi_labour_tax_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Grand Total</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_claimed_total_tax_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="75_25_assessed_total_tax_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="schedule_print_id" hidden>
+                                <div class="table_class">
+                                    <div class="table_row_class" id="schedule_paint_final_table_print_id">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class"><span class="schedule_painting_material_percentage_print_class"></span>% of material</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_claimed_material_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_assessed_material_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Vat @ 14.5% on <span class="schedule_painting_material_percentage_print_class"></span>% of material</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_claimed_material_vat_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_assessed_material_vat_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class"><span class="schedule_painting_labour_percentage_print_class"></span>% of labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_claimed_labour_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_assessed_labour_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Service Tax 14% on <span class="schedule_painting_labour_percentage_print_class"></span>% of labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_claimed_labour_service_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_assessed_labour_service_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Swach Bharath Cess @ 0.5% on <span class="schedule_painting_labour_percentage_print_class"></span>% of labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_claimed_labour_swach_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_assessed_labour_swach_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Krishi Kalyan Cess @ 0.5% on <span class="schedule_painting_labour_percentage_print_class"></span>% of labour</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_claimed_labour_krishi_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_assessed_labour_krishi_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Grand Total</div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_claimed_total_print_id"></span></div>
+                                        <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="schedule_assessed_total_print_id"></span></div>
+                                        <div class="table_parts_cell_without_borders_class"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear_class"></div>
+                            <hr class="horizontal_line_class">
+                        </section>-->
+            <!--            <section id="imt23_parts_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">
+                            <label class="label_class"><b>Parts admissible under IMT23</b></label><br>
+                            <div class="table_class" id="imt23_parts_table_print_id"></div>-->
+            <!--<div class="table_class" id="imt23_parts_final_table_print_id">-->
+            <!--                    <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_parts_claimed_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_parts_assessed_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Vat @ 14.5%</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_parts_claimed_vat_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_parts_assessed_vat_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                                <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>
+                                    <div class="table_parts_cell_class">Grand Total</div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_parts_claimed_total_print_id"></span></div>
+                                    <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_parts_assessed_total_print_id"></span></div>
+                                    <div class="table_parts_cell_without_borders_class"></div>
+                                </div>
+                            </div>-->
+            <!--</section>-->
+            <!--<section id="imt23_labour_print_id" hidden style="padding-top: 5px; padding-bottom: 5px">-->
+            <!--<label class="label_class"><b>Labour admissible under IMT23</b></label><br>-->
+            <!--<div class="table_class" id="imt23_labour_table_print_id"></div>-->
+            <!--<div class="table_class" id="imt23_labour_final_table_print_id">-->
+            <!--                    <div class="table_row_class">
+                                    <div class="table_parts_serial_cell_without_borders_class"></div>-->
+            <!--<div class="table_parts_cell_class">Total</div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_claimed_print_id"></span></div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_assessed_print_id"></span></div>-->
+            <!--<div class="table_parts_cell_without_borders_class"></div>-->
+            <!--</div>-->
+            <!--                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Service Tax 14%</div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_claimed_service_print_id"></span></div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_assessed_service_print_id"></span></div>-->
+            <!--<div class="table_parts_cell_without_borders_class"></div>-->
+            <!--                        </div>
+                                    <div class="table_row_class">
+                                        <div class="table_parts_serial_cell_without_borders_class"></div>
+                                        <div class="table_parts_cell_class">Swach Bharath Cess @ 0.5%</div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_claimed_swach_print_id"></span></div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_assessed_swach_print_id"></span></div>-->
+            <!--<div class="table_parts_cell_without_borders_class"></div>-->
+            <!--</div>-->
+            <!--<div class="table_row_class">-->
+            <!--<div class="table_parts_serial_cell_without_borders_class"></div>-->
+            <!--<div class="table_parts_cell_class">Krishi Kalyan Cess @ 0.5%</div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_claimed_krishi_print_id"></span></div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_assessed_krishi_print_id"></span></div>-->
+            <!--<div class="table_parts_cell_without_borders_class"></div>-->
+            <!--</div>-->
+            <!--<div class="table_row_class">-->
+            <!--<div class="table_parts_serial_cell_without_borders_class"></div>-->
+            <!--<div class="table_parts_cell_class">Grand Total</div>-->
+            <!--<div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_claimed_total_print_id"></span></div>-->
+            <!--      <div class="table_parts_amount_cell_class" style="text-align: right">Rs. <span id="imt23_labour_assessed_total_print_id"></span></div>-->
+            <!--<div class="table_parts_cell_without_borders_class"></div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <!--</section>-->
+            <section id="signature_summary_print_id">
+                <div id="page_signature_summary_print_id"></div>
+                <div class="clear_class"></div>
+            </section>
+        </article>
+        <!--<div class="page_break"></div>-->
+        <!--        <article id="summary_of_assessment_print_id">
+                    <section id="summary_details_print_id">
+                        <center><b>SUMMARY OF ESTIMATE AND ASSESSMENT OF LOSS</b></center><br>
+                        <div class="table_class">
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class"><b><u>Claimed</u></b></div>
+                                <div class="table_cell_without_borders_class"><b><u>Assessed</u></b></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Total Labour Charges</div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="labour_charges_claimed_print_id"></span></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="labour_charges_assessed_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Cost of Recommended Spare Parts</div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="recommended_parts_claimed_print_id"></span></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="recommended_parts_assessed_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Spot Photos</div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="spot_photo_claimed_print_id"></span></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="spot_photo_assessed_print_id"></span></div>                        
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Spot Repair/ Towing</div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="spot_repair_claimed_print_id"></span></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="spot_repair_assessed_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class"><b>Total</b></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right"><b>Rs. <span id="claimed_total_print_id"></span></b></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right"><b>Rs. <span id="assessed_total_print_id"></span></b></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class"></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Deduct depreciation @ <span id="metal_percentage_summary_print_id"></span>% on Metal parts</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="metal_depreciation_summary_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Deduct depreciation @ <span id="fibre_percentage_summary_print_id"></span>% on Fibre parts</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="fibre_depreciation_summary_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Deduct depreciation @ <span id="rubber_percentage_summary_print_id"></span>% on Plastic, Rubber & Nylon</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="rubber_depreciation_summary_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Deduct depreciation @ <span id="painting_percentage_summary_print_id"></span>% on Painting Materials</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="painting_depreciation_summary_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class imt23_class" hidden>
+                                <div class="table_cell_without_borders_class">Deduct excess @ <span id="imt23_parts_percentage_print_id"></span>% on Parts admissible under IMT23</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="imt23_parts_depreciation_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class imt23_class" hidden>
+                                <div class="table_cell_without_borders_class">Deduct excess @ <span id="imt23_labour_percentage_print_id"></span>% on Labour admissible under IMT23</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="imt23_labour_depreciation_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="depreciation_total_print_id"></span></div>
+                            </div>       
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Deduct Policy Excess</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class"></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">a. Compulsory</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="compulsory_print_id"></span></div>
+                            </div>       
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">b. Imposed</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="imposed_print_id"></span></div>
+                            </div>                          
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">c. Voluntary</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="voluntary_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="policy_excess_total_print_id"></span></div>
+                            </div>                    
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class">Deduct Salvage Value</div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="salvage_value_print_id"></span></div>
+                            </div>                    
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right">Rs. <span id="salvage_value_total_print_id"></span></div>
+                            </div>
+                            <div class="table_row_class">
+                                <div class="table_cell_without_borders_class"><b>Insurer's approximate liability</b></div>
+                                <div class="table_cell_without_borders_class"></div>
+                                <div class="table_cell_without_borders_class" style="text-align: right"><b>Rs. <span id="liability_total_print_id"></span></b></div>
+                            </div> 
+                        </div>
+                        add total in cash
+                        <label>In Words <span id="liability_total_in_words_print_id"></span></label>
+                        <div class="clear_class"></div>
+                    </section>
+                    <section id="spot_observations_print_id" hidden>
+                        <label class="label_class"><b><u>Surveyor Observations</u></b></label><br>
+                        <div id="spot_comments_print_id"></div>
+                                        <label class="label_class">1.</label>
+                                        <span id="rc_dl_verified_print_id" hidden>RC & DL produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                        <span id="rc_produced_print_id" hidden>RC produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                        <span id="dl_produced_print_id" hidden>DL produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                        <span id="no_documents_produced_id" hidden>None of the documents produced for verification.<br></span>                      
+                                        <label class="label_class">2. Chassis and engine numbers physically verified.</label><br>
+                                        <label class="label_class">3. Photos of damaged vehicles enclosed.</label><br>
+                                        <label class="label_class">4. In my opinion, the above assessed loss is attributable to the stated version of the accident.</label><br>
+                                        <label class="label_class">5. Repairers consent is obtained for the revisions done in the estimate.</label><br>
+                        <div class="clear_class"></div>
+                        <hr class="horizontal_line_class">
+                    </section>-->
+        <!--                    <section id="surveyor_observations_print_id">
+                                <label class="label_class"><b><u>Surveyor Observations</u></b></label><br>
+                                <div id="surveyor_comments_print_id"></div>
+                                                <label class="label_class">1.</label>
+                                                <span id="rc_dl_verified_print_id" hidden>RC & DL produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                                <span id="rc_produced_print_id" hidden>RC produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                                <span id="dl_produced_print_id" hidden>DL produced for verification. Particulars of the same has been extracted in this report.<br></span>
+                                                <span id="no_documents_produced_id" hidden>None of the documents produced for verification.<br></span>                      
+                                                <label class="label_class">2. Chassis and engine numbers physically verified.</label><br>
+                                                <label class="label_class">3. Photos of damaged vehicles enclosed.</label><br>
+                                                <label class="label_class">4. In my opinion, the above assessed loss is attributable to the stated version of the accident.</label><br>
+                                                <label class="label_class">5. Repairers consent is obtained for the revisions done in the estimate.</label><br>
+                                <div class="clear_class"></div>
+                                <hr class="horizontal_line_class">
+                            </section>-->
+        <!--        <section id="signature_summary_print_id">
+                    <div id="page_signature_summary_print_id"></div>
+                    <div class="clear_class"></div>
+                </section>-->
+        <!--</article>--> 
+    </body>
+</html>

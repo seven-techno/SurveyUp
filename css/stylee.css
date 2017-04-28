@@ -1,0 +1,12 @@
+div.new_css{
+    display: block;
+    padding: 5px;
+    border: #000000 1px solid;
+    float: left;
+    width: 103px;
+    height: 70px;
+}
+hr{
+	position: relative;
+    top: 59px;
+}

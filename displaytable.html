@@ -1,0 +1,133 @@
+
+<html>
+	<head>
+	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/finalprivate.css">
+        <link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/browser.css">
+
+        <link rel="stylesheet" href="css/bootstrap-timepicker.min.css">
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="css/datatables.min.css"/>
+    </head>
+
+
+<body background="images/lbbackground.jpg" >
+        <nav id="myNavbar" class="navbar navbar-default navbar-inverse " role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Survey
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown dropdown-submenu">
+                                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Final Survey</a>
+                                    <ul class="dropdown-menu">
+                                        <li >
+                                            <a href="displaytable.html">Private</a>
+                                        </li>
+                                        <li >
+                                            <a href="commercialtable.html">Commercial</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown dropdown-submenu">
+                                    <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Spot Survey</a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="displayspotTable.html">Private</a>
+                                        </li>
+                                        <li >
+                                            <a href="displayspotcommercial.html">Commercial</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown ">
+                                    <a  href="displayreinspection.html">Re-inspection</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="reporthistory.html">Report History</a></li>
+                        <li><a href="company.html">Insurance Companies</a></li>
+                        <li><a href="personal.html">Personal Details</a></li>
+                        <li><a href="accounts.html">Accounts</a></li>
+                        <li><a  href="#" onclick="logout()">Logout</a></li>
+                        <li><a  href="settings.html">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <article class="container" id="boxshadow" style="background-color:white;">
+<div class="table-responsive" style="display:none;" id="thead">
+<div class="row">
+<h1 style="position: relative;
+    left: 16px;font-size:18px;font-weight:bold;">FINAL PRIVATE SURVEY</h1>
+    <div class="col-xs-10 pull-right">
+
+        <input class="btn btn-primary" id="newform" type="button" value="ADD FORM" name="new_form" style="float:right;" onclick="location.href = 'finalprivate.html';">
+    </div>
+    </div>
+                        
+                        <table id="example" class="display" cellspacing="0" width="100%">
+                        <thead>
+            <tr>
+                <th>SlNo</th>
+                <th>ReportNo</th>
+                <th>VehicleNo</th>
+                <th>Survey date</th>
+                <th>Survey place</th>
+                <th>Edit</th>
+                <th>Report</th>
+                <th>Bill</th>
+
+                <th>Delete</th>
+                
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>SlNo</th>
+                <th>ReportNo</th>
+                <th>VehicleNo</th>
+                <th>Survey date</th>
+                <th>Survey place</th>
+                <th>Edit</th>
+                <th>Report</th>
+                <th>Bill</th>
+
+                <th>Delete</th>
+            </tr>
+        </tfoot>
+        <tbody id="report_particulars">
+        </tbody>
+                       
+                        </table>
+                    </div>
+                    </article>
+	 </body>
+     <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/bootstrap-timepicker.min.js"></script>
+         <script src="js\pouchdb-6.1.2.min.js"></script>
+        <script src="js/login.js"></script>
+        <script src="js/serial.js"></script>
+        <script src="js/finalprivate/tableprivate.js"></script>
+        <script src="js/finalprivate/finalprivate.js"></script>
+        <script src="js/finalprivate/finalprivatedb.js"></script>
+        <script src="js/datatables.min.js"></script>
+             <script> 
+         displayFinalPrivate();
+           </script>  
+</html>

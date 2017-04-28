@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Insurance:Survey</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="stylesheet" href="css/finalcommercial.css">
+        <link rel="stylesheet" href="css/datepicker.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap-timepicker.min.css">
+        <link rel="stylesheet" href="css/stylee.css">
+       
+    </head>
+    
+    <body background="images/lbbackground.jpg" >
+        <nav id="myNavbar" class="navbar navbar-default navbar-inverse " role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!--<a class="navbar-brand" href="index.html">HOME</a>-->
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a  href="finalprivatereport.html" >Final Private
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="finalcommercialreport.html">Final Commercial</a>
+                        </li>
+                        <li>
+                            <a  href="spotprivatereport.html">Spot Private</a>
+                        </li>
+                        <li>
+                           <a href="spotcommercialreport.html">Spot Commercial</a>
+                        </li>
+                        <li><a href="reinspectionreport.html">Reinspection</a></li>
+                        <li><a href="tax.html">Tax</a></li>
+                        <li><a href="depreciation.html">Depreciation</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+       <article class="container" id="boxshadow" style="background-color:white;">
+            <form action="" id="form_final_private_id" style="padding-top: 10px;" name="final_private_form">
+                <fieldset>
+                    <legend class="control-label">Final Survey - Private</legend>
+                    <!--action value? auto generate reference no and edit if necessary-->
+                    <div class="row" >
+                        <div class="col-xs-2 ">
+                            <label  for="report_number_final_private_id">Report No.:</label>
+                        </div>
+                        <div class="col-xs-3">
+                            <!--on change load again change sessionStorage value-->
+                            
+                            <select id="company_manager_final_private_id" name="company_manager_final_private_id" 
+                              class="form-control"> 
+                               <option value="">Select</option>
+                                <option value="dd-mm-yy" onclick="hideOther();">dd-mm-yy</option>
+                                <option value="dd-mm-yyyy" onclick="hideOther();">dd-mm-yyyy</option>
+                                <option value="mm-dd-yy" onclick="hideOther();">mm-dd-yy</option>
+                                <option value="" onclick="myFunction();">others</option>
+
+                            </select>
+                            </div>
+                            </div>
+                            <div class="row">
+                        <div class="col-xs-2">
+                            <label for="report_date_final_private_id" >Set Report No:</label>
+                        </div>
+                        <div class="col-xs-3" id="show">
+                            <input  type="text" class="form-control" placeholder="click to select date" hidden name="report_date_final_private_id"  id="report_date_final_private_id" >
+                        </div>
+                    </div>
+                
+                            <!--onblur="setReportNo()"-->
+                        </div>
+                    </div>
+             </fieldset>
+             </form>
+             </article>
+             
+             </body>
+
+             <script>
+function hideOther(){
+    document.getElementById("show").style.display = "none";
+}
+function myFunction()
+{
+document.getElementById("report_date_final_private_id").style.display="block";
+}
+</script>
+             </html>       
+
+
